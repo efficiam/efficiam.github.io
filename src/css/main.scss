@@ -7,6 +7,11 @@ $color-basepurple:  #7E5CE8;
 $color-strongblue:  #3C73DB; // Used for the main gradient.
 $color-mainblack:   #585858;
 
+$vertical-rhythm: 3.125em; // 50
+
+$container-size:    75em; // 1200
+$container-spacing: $vertical-rhythm / 2;
+
 /*
  * Generics
  */
@@ -17,22 +22,44 @@ $color-mainblack:   #585858;
  * Base
  */
 
-// ...
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
 
 /*
  * Objects
  */
 
-// ...
+.o-fullpage {
+  width: 100%;
+  height: 100%;
+}
 
 /*
  * Components
  */
 
-// ...
+.c-container {
+  width: $container-size + $container-spacing;
+  padding: $container-spacing;
+}
+
+.c-main-frame {
+  background-image: url("../images/first-background.png"),
+                    linear-gradient(to bottom right, $color-lightpurple, $color-strongblue);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 100%;
+}
 
 /*
  * Utilities
  */
 
-.u-bg-mainGradient { background: linear-gradient(to bottom right, $color-lightpurple, $color-strongblue); }
+// ...
