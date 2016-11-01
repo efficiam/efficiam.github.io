@@ -2,7 +2,8 @@ var gulp          = require('gulp'),
     sass          = require('gulp-sass'),
     cssnano       = require('cssnano'),
     autoprefixer  = require('autoprefixer'),
-    postcss       = require('gulp-postcss');
+    postcss       = require('gulp-postcss'),
+    webserver     = require('gulp-webserver');
 
 gulp.task('build-css', function() {
   return gulp.src('src/css/main.scss')
@@ -12,6 +13,16 @@ gulp.task('build-css', function() {
       cssnano()
     ]))
     .pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('start-webserver', function() {
+  gulp.src('./')
+    .pipe(webserver({
+      livereload:       true,
+      directoryListing: true,
+      open:             true,
+      host:             '0.0.0.0'
+    }));
 });
 
 gulp.task('watch-css', function() {
