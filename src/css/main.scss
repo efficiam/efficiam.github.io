@@ -35,4 +35,4 @@ $color-mainblack:   #585858;
  * Utilities
  */
 
-// ...
+.u-bg-mainGradient { background: linear-gradient(to bottom right, $color-lightpurple, $color-strongblue); }

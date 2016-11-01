@@ -2,10 +2,6 @@
   "name": "efficiam",
   "version": "1.0.0",
   "main": "index.html",
-  "scripts": {
-    "build-css": "node-sass --output-style compressed src/css/main.scss dist/css/main.css",
-    "watch-css": "node-sass -w --output-style compressed src/css/main.scss dist/css/main.css"
-  },
   "repository": {
     "url": "git@github.com:ricogallo/efficiam.git",
     "type": "git"
@@ -13,6 +9,11 @@
   "author": "diegopq <diego.pq.k@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^6.5.1",
+    "cssnano": "^3.8.0",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.2.0",
+    "gulp-sass": "^2.3.2",
     "node-sass": "^3.10.1"
   }
 }
