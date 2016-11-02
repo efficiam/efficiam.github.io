@@ -3,6 +3,7 @@
  */
 
 $color-lightpurple: #BD19F5; // Used for the main gradient.
+$color-neopurple:   #9649BF;
 $color-basepurple:  #7E5CE8;
 $color-strongblue:  #3C73DB; // Used for the main gradient.
 $color-darkgrey:    #CCCCCC;
@@ -29,6 +30,8 @@ $font-logo:         4em; // 64
 
 $container-size:    75em; // 1200
 $container-spacing: $vertical-rhythm / 2;
+
+$skill-number-size: 3.5em;
 
 /*
  * Generics
@@ -79,6 +82,17 @@ h3 {
   }
 }
 
+.o-columns {
+  display: table;
+
+  &__item {
+    display: table-cell;
+    vertical-align: top;
+
+    &--middle { vertical-align: middle;}
+  }
+}
+
 /*
  * Components
  */
@@ -87,7 +101,7 @@ h3 {
   max-width: $container-size + $container-spacing;
   height: 100%;
 
-  padding: $container-spacing;
+  padding: 0 $container-spacing;
 }
 
 .c-gradient {
@@ -97,11 +111,19 @@ h3 {
   background-size: 100% 100%;
 
   &--purpleblue {
-    background-image: linear-gradient(to bottom right, $color-lightpurple, $color-strongblue);
+    background-image: linear-gradient(
+      to bottom right,
+      $color-lightpurple,
+      $color-strongblue
+    );
   }
 
   &--greyscale {
-    background-image: linear-gradient(to right, $color-lightgrey, $color-mainwhite);
+    background-image: linear-gradient(
+      to right,
+      $color-lightgrey,
+      $color-mainwhite
+    );
   }
 }
 
@@ -174,11 +196,15 @@ h3 {
 
 .c-heading {
   color: $color-basepurple;
+  font-weight: 700;
+  letter-spacing: .05em;
 
   &--big {
     font-size: $font-lg;
-    font-weight: 700;
-    letter-spacing: .05em;
+  }
+
+  &--normal {
+    font-size: $font-md;
   }
 }
 
@@ -194,6 +220,62 @@ h3 {
     line-height: 1.5;
     letter-spacing: .03em;
     word-spacing: .05em;
+  }
+
+  &--normal {
+    margin-top: $space-sm;
+    width: $vertical-rhythm * 7.5;
+
+    font-size: $font-nm;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: .03em;
+    word-spacing: .05em;
+  }
+}
+
+.c-skill-step {
+  position: relative;
+
+  padding: $space-md;
+  display: table;
+
+  border-radius: 5px;
+  background-color: $color-mainwhite;
+  box-shadow: 0px 0px 20px rgba($color-fullblack, .1);
+
+  &:first-of-type { margin-top: $space-md; }
+
+  &--left { margin-left: $skill-number-size / 2; }
+
+  &__number {
+    width: $skill-number-size;
+    height: $skill-number-size;
+
+    position: absolute;
+    top: 50%;
+    left: -($skill-number-size / 2);
+    transform: translateY(-50%);
+
+    line-height: 3.5em;
+
+    border-radius: 180px;
+    background-image: linear-gradient(
+      to bottom right,
+      $color-neopurple,
+      $color-basepurple
+    );
+
+    span {
+      font-size: $font-md;
+      color: $color-mainwhite;
+      font-weight: 700;
+    }
+  }
+
+  &__content {
+    padding-left: $space-nm;
+    text-align: left;
   }
 }
 

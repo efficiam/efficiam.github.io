@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="170" height="170" viewBox="0 0 170 170">
+  <defs>
+    <linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="98.286%">
+      <stop stop-color="#8D50CF" stop-opacity="0" offset="0%"/>
+      <stop stop-color="#8D50CF" offset="50.937%"/>
+      <stop stop-color="#8D50CF" stop-opacity="0" offset="100%"/>
+    </linearGradient>
+    <linearGradient id="b" x1="0%" y1="0%" y2="97.761%">
+      <stop stop-color="#9648BF" offset="0%"/>
+      <stop stop-color="#7E5CE8" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(3 3)">
+    <g stroke="url(#a)" opacity=".15" stroke-linecap="square">
+      <g transform="translate(37.677)">
+        <path d="M1.9488189 163.349206L1.9488189.650793651M30.5314961 163.349206L30.5314961.650793651M59.1141732 163.349206L59.1141732.650793651M87.6968504 163.349206L87.6968504.650793651"/>
+      </g>
+      <g transform="rotate(90 63.661 100.839)">
+        <path d="M1.9488189 163.349206L1.9488189.650793651M30.5314961 163.349206L30.5314961.650793651M59.1141732 163.349206L59.1141732.650793651M87.6968504 163.349206L87.6968504.650793651"/>
+      </g>
+    </g>
+    <path stroke="url(#b)" stroke-width="3" d="M39,119.279672 C39,119.279672 50.3640183,87.902075 62.5149933,79.384976 C74.6659683,70.867877 81.1105172,98.6060011 96.9653881,88.4474355 C112.820259,78.2888698 125.169826,44 125.169826,44" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
