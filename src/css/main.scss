@@ -9,6 +9,7 @@ $color-darkgrey:    #CCCCCC;
 $color-lightgrey:   #EFEFEF;
 $color-mainblack:   #585858;
 $color-mainwhite:   #FFFFFF;
+$color-fullblack:   #000000;
 
 $vertical-rhythm:   3.125em; // 50
 
@@ -107,6 +108,11 @@ h3 {
     background-color: $color-mainwhite;
     opacity: .02;
 
+    &--dark {
+      background-color: $color-fullblack;
+      opacity: .01;
+    }
+
     &--nm { width: 30em; }
     &--md { width: 40em; }
     &--lg { width: 50em; }
@@ -144,7 +150,7 @@ h3 {
   }
 
   &--greyscale {
-    background-image: linear-gradient(to right, $color-darkgrey, $color-lightgrey);
+    background-image: linear-gradient(to right, $color-lightgrey, $color-mainwhite);
   }
 }
 
