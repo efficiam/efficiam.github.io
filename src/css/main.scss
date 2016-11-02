@@ -6,8 +6,20 @@ $color-lightpurple: #BD19F5; // Used for the main gradient.
 $color-basepurple:  #7E5CE8;
 $color-strongblue:  #3C73DB; // Used for the main gradient.
 $color-mainblack:   #585858;
+$color-mainwhite:   #FFFFFF;
 
-$vertical-rhythm: 3.125em; // 50
+$vertical-rhythm:   3.125em; // 50
+
+$size-nm:           $vertical-rhythm / 3;
+$size-xs:           $size-nm / 4;
+$size-sm:           $size-nm / 2;
+
+$font-xs:           0.5em;   // 8
+$font-sm:           0.75em;  // 12
+$font-nm:           1.125em; // 18
+$font-md:           1.5em;   // 24
+
+$font-logo:         4em; // 64
 
 $container-size:    75em; // 1200
 $container-spacing: $vertical-rhythm / 2;
@@ -33,6 +45,10 @@ body {
   height: 100%;
 }
 
+body {
+  font-family: 'Lato', sans-serif;
+}
+
 /*
  * Objects
  */
@@ -47,19 +63,96 @@ body {
  */
 
 .c-container {
-  width: $container-size + $container-spacing;
+  max-width: $container-size + $container-spacing;
+  height: 100%;
+
   padding: $container-spacing;
 }
 
+.c-bg-poly {
+  // Its parent must have a position:relative.
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &__bend {
+    position: absolute;
+    height: 500%;
+    top: 50%;
+
+    transform-origin: 50% 50%;
+
+    background-color: $color-mainwhite;
+    opacity: .02;
+
+    &--nm { width: 30em; }
+    &--md { width: 40em; }
+    &--lg { width: 50em; }
+
+    &--10deg { transform: translateY(-50%) rotate(10deg); }
+    &--30deg { transform: translateY(-50%) rotate(30deg); }
+    &--60deg { transform: translateY(-50%) rotate(60deg); }
+    &--90deg { transform: translateY(-50%) rotate(90deg); }
+    &--120deg { transform: translateY(-50%) rotate(120deg); }
+    &--m10deg { transform: translateY(-50%) rotate(-10deg); }
+    &--m30deg { transform: translateY(-50%) rotate(-30deg); }
+    &--m60deg { transform: translateY(-50%) rotate(-60deg); }
+    &--m90deg { transform: translateY(-50%) rotate(-90deg); }
+    &--m120deg { transform: translateY(-50%) rotate(-120deg); }
+
+    &--l10 { left: 10%; }
+    &--l30 { left: 30%; }
+    &--l50 { left: 50%; }
+
+    &--r0 { right: 0; }
+    &--r10 { right: 10%; }
+    &--r30 { right: 30%; }
+  }
+}
+
 .c-main-frame {
-  background-image: url("../images/first-background.png"),
-                    linear-gradient(to bottom right, $color-lightpurple, $color-strongblue);
+  background-image: linear-gradient(to bottom right, $color-lightpurple, $color-strongblue);
   background-repeat: no-repeat, no-repeat;
   background-size: 100% 100%;
+}
+
+.c-logo {
+  text-align: center;
+
+  &__icon {
+    width: auto;
+    height: 9.375em; // 150
+  }
+
+  &__name {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: $font-logo;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: $color-mainwhite;
+
+    margin-top: $size-xs;
+  }
 }
 
 /*
  * Utilities
  */
 
-// ...
+.u-align-hc {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.u-align-vc {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.u-display-t { display: table; }
+
+.u-position-r { position: relative; }
+
+.u-overflow-h { overflow: hidden; }
