@@ -90,55 +90,6 @@ h3 {
   padding: $container-spacing;
 }
 
-.c-bg-poly {
-  // Its parent must have a position:relative.
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  z-index: 10;
-
-  &__bend {
-    position: absolute;
-    height: 500%;
-    top: 50%;
-
-    transform-origin: 50% 50%;
-
-    background-color: $color-mainwhite;
-    opacity: .02;
-
-    &--dark {
-      background-color: $color-fullblack;
-      opacity: .01;
-    }
-
-    &--nm { width: 30em; }
-    &--md { width: 40em; }
-    &--lg { width: 50em; }
-
-    &--10deg { transform: translateY(-50%) rotate(10deg); }
-    &--30deg { transform: translateY(-50%) rotate(30deg); }
-    &--60deg { transform: translateY(-50%) rotate(60deg); }
-    &--90deg { transform: translateY(-50%) rotate(90deg); }
-    &--120deg { transform: translateY(-50%) rotate(120deg); }
-
-    &--m10deg { transform: translateY(-50%) rotate(-10deg); }
-    &--m30deg { transform: translateY(-50%) rotate(-30deg); }
-    &--m60deg { transform: translateY(-50%) rotate(-60deg); }
-    &--m90deg { transform: translateY(-50%) rotate(-90deg); }
-    &--m120deg { transform: translateY(-50%) rotate(-120deg); }
-
-    &--l10 { left: 10%; }
-    &--l30 { left: 30%; }
-    &--l50 { left: 50%; }
-
-    &--r0 { right: 0; }
-    &--r10 { right: 10%; }
-    &--r30 { right: 30%; }
-  }
-}
-
 .c-gradient {
   position: relative;
 
