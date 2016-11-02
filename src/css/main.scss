@@ -75,6 +75,8 @@ body {
   top: 0;
   left: 0;
 
+  z-index: 10;
+
   &__bend {
     position: absolute;
     height: 500%;
@@ -94,6 +96,7 @@ body {
     &--60deg { transform: translateY(-50%) rotate(60deg); }
     &--90deg { transform: translateY(-50%) rotate(90deg); }
     &--120deg { transform: translateY(-50%) rotate(120deg); }
+
     &--m10deg { transform: translateY(-50%) rotate(-10deg); }
     &--m30deg { transform: translateY(-50%) rotate(-30deg); }
     &--m60deg { transform: translateY(-50%) rotate(-60deg); }
@@ -111,13 +114,18 @@ body {
 }
 
 .c-main-frame {
+  position: relative;
+
   background-image: linear-gradient(to bottom right, $color-lightpurple, $color-strongblue);
-  background-repeat: no-repeat, no-repeat;
+  background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
 .c-logo {
   text-align: center;
+
+  // Vs poly background (10)
+  z-index: 20;
 
   &__icon {
     width: auto;
@@ -136,6 +144,23 @@ body {
   }
 }
 
+.c-scroll-pls {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+
+  width: 100%;
+  height: 3em;
+
+  // Vs poly background (10)
+  z-index: 20;
+
+  background-image: url('../images/scrollpls.svg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: auto 3em;
+}
+
 /*
  * Utilities
  */
@@ -152,7 +177,6 @@ body {
 }
 
 .u-display-t { display: table; }
-
-.u-position-r { position: relative; }
+.u-display-b { display: block; }
 
 .u-overflow-h { overflow: hidden; }
