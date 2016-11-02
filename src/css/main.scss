@@ -5,6 +5,8 @@
 $color-lightpurple: #BD19F5; // Used for the main gradient.
 $color-basepurple:  #7E5CE8;
 $color-strongblue:  #3C73DB; // Used for the main gradient.
+$color-darkgrey:    #CCCCCC;
+$color-lightgrey:   #EFEFEF;
 $color-mainblack:   #585858;
 $color-mainwhite:   #FFFFFF;
 
@@ -13,11 +15,14 @@ $vertical-rhythm:   3.125em; // 50
 $space-nm:           $vertical-rhythm / 2;
 $space-xs:           $space-nm / 3;
 $space-sm:           $space-nm / 2;
+$space-md:           $space-nm * 2;
+$space-lg:           $space-nm * 4;
 
 $font-xs:           0.875em; // 14
 $font-sm:           1em;     // 16
 $font-nm:           1.125em; // 18
 $font-md:           1.5em;   // 24
+$font-lg:           2em;     // 32
 
 $font-logo:         4em; // 64
 
@@ -49,13 +54,28 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
 /*
  * Objects
  */
 
-.o-fullpage {
-  width: 100%;
-  height: 100%;
+.o-frame {
+
+  &--spaced {
+    padding: $space-lg;
+  }
+
+  &--fullpage {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 /*
@@ -113,16 +133,22 @@ body {
   }
 }
 
-.c-main-frame {
+.c-gradient {
   position: relative;
 
-  background-image: linear-gradient(to bottom right, $color-lightpurple, $color-strongblue);
   background-repeat: no-repeat;
   background-size: 100% 100%;
+
+  &--purpleblue {
+    background-image: linear-gradient(to bottom right, $color-lightpurple, $color-strongblue);
+  }
+
+  &--greyscale {
+    background-image: linear-gradient(to right, $color-darkgrey, $color-lightgrey);
+  }
 }
 
 .c-logo {
-  text-align: center;
 
   &__icon {
     width: auto;
@@ -143,7 +169,7 @@ body {
 
 .c-scroll-pls {
   position: absolute;
-  bottom: 5%;
+  bottom: $space-nm;
   left: 0;
 
   width: 100%;
@@ -189,6 +215,31 @@ body {
   }
 }
 
+.c-heading {
+  color: $color-basepurple;
+
+  &--big {
+    font-size: $font-lg;
+    font-weight: 700;
+    letter-spacing: .05em;
+  }
+}
+
+.c-paragraph {
+  color: $color-mainblack;
+
+  &--big {
+    margin-top: $space-sm;
+    width: $vertical-rhythm * 8.5;
+
+    font-size: $font-md;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: .03em;
+    word-spacing: .05em;
+  }
+}
+
 /*
  * Utilities
  */
@@ -213,3 +264,5 @@ body {
 
 .u-zindex-10 { z-index: 10; }
 .u-zindex-20 { z-index: 20; }
+
+.u-txalign-c { text-align: center; }
