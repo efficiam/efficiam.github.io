@@ -9,7 +9,9 @@ $color-base-black:  #585858;
 
 $color-gradient-purple-1:   #BD19F5;
 $color-gradient-purple-2:   #9649BF;
-$color-gradient-blue-1:     #BD19F5;
+$color-gradient-grey-1:     #E6E6E6;
+$color-gradient-grey-2:     #DDDDDD;
+$color-gradient-blue-1:     #3C73DB;
 
 // Vertical rhythm
 $vertical-rhythm: 3.125em; // 50
@@ -24,8 +26,118 @@ $space-md: $space-unit * 2;
 $space-lg: $space-unit * 3;
 
 // Font sizes
-$font-xs: 0.75em;   // 12
-$font-sm: 1em;      // 16
-$font-nm: 1.125em;  // 18
-$font-md: 1.5em;    // 24
-$font-lg: 2em;      // 32
+$font-xs:   0.75em;   // 12
+$font-sm:   1em;      // 16
+$font-nm:   1.125em;  // 18
+$font-md:   1.5em;    // 24
+$font-lg:   2em;      // 32
+$font-xxl:  4em;      // 64
+
+// Layout
+$layout-size:  75em; // 1200
+$layout-space: $vertical-rhythm / 2;
+
+
+
+/*
+ * Generics
+ */
+
+@import "normalize";
+
+
+
+/*
+ * Base
+ */
+
+body,
+html {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+
+/*
+ * Objects
+ */
+
+
+
+/*
+ * Components
+ */
+
+// Section with poly background
+.c-poly-section {
+
+  &--purple {
+    background-image: url("../images/poly-white.svg"),
+                      linear-gradient(to bottom right, $color-gradient-purple-1, $color-gradient-blue-1);
+  }
+
+  &--grey {
+    background-image: url("../images/poly-black.svg"),
+                      linear-gradient(to bottom right, $color-gradient-grey-2, $color-gradient-grey-1);
+  }
+}
+
+// Layout container with spacing
+.c-container {
+  width: $layout-size + $layout-space;
+  padding: 0 $layout-space;
+}
+
+
+
+/*
+ * Utilities
+ */
+
+// Backgrounds
+.u-bg-purple { background-color: $color-base-purple; }
+.u-bg-gradient-purple { background-image: linear-gradient(to bottom right, $color-gradient-purple-2, $color-base-purple); }
+
+.u-bg-full      { background-size: 100% auto; }
+.u-bg-norepeat  { background-repeat: no-repeat; }
+
+// Sized
+.u-width-full   { width: 100%; }
+.u-height-full  { height: 100%; }
+
+// Display
+.u-display-t { display: table; }
+.u-display-b { display: block; }
+
+// Align
+.u-align-vc {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.u-align-hc {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Text (tx)
+.u-txcolor-white { color: $color-base-white; }
+
+.u-txsize-xxl { font-size: $font-xxl; }
+
+.u-txuppercase { text-transform: uppercase; }
+
+.u-txfamily-logo { font-family: 'Raleway', sans-serif; }
+.u-txfamily-text { font-family: 'Lato', sans-serif; }
+
+.u-txalign-center { text-align: center; }
+
+// Margin
+.u-mt-nm { margin-top: $space-nm; }
