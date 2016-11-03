@@ -165,8 +165,14 @@ ul {
 
   position: absolute;
   top: 50%;
-  left: -($label-number-size / 2);
   transform: translateY(-50%);
+
+  &--left   { left: -($label-number-size / 2); }
+  &--right  { right: -($label-number-size / 2); }
+}
+
+.c-clear {
+  clear: both;
 }
 
 
@@ -256,6 +262,7 @@ ul {
 .u-pa-xl { padding: $space-xl; }
 
 .u-pl-nm { padding-left: $space-nm; }
+.u-pl-md { padding-left: $space-md; }
 
 // Position
 .u-position-a { position: absolute; }
