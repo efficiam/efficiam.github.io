@@ -106,12 +106,12 @@ ul {
 
   &--purple {
     background-image: url("../images/poly-white.svg"),
-                      linear-gradient(to bottom right, $color-gradient-purple-1, $color-gradient-blue-1);
+                      linear-gradient(to right, $color-gradient-purple-1, $color-gradient-blue-1);
   }
 
   &--grey {
     background-image: url("../images/poly-black.svg"),
-                      linear-gradient(to bottom right, $color-gradient-grey-1, $color-base-white);
+                      linear-gradient(to right, $color-gradient-grey-1, $color-base-white);
   }
 }
 
@@ -131,6 +131,21 @@ ul {
 // Buttons :D
 .c-btn {
   border-radius: $radius-size;
+
+  // hack
+  backface-visibility: hidden;
+  transform: translateZ(0);
+
+  transition: all ease .2s;
+
+  &--full {
+
+    &:hover,
+    &:active,
+    &:focus {
+      transform: scale(1.2);
+    }
+  }
 
   &--ghost {
     opacity: .5;
@@ -171,6 +186,7 @@ ul {
   &--right  { right: -($label-number-size / 2); }
 }
 
+// Clear float
 .c-clear {
   clear: both;
 }
@@ -259,10 +275,17 @@ ul {
 .u-pa-sm { padding: $space-sm; }
 .u-pa-nm { padding: $space-nm; }
 .u-pa-md { padding: $space-md; }
+.u-pa-lg { padding: $space-lg; }
 .u-pa-xl { padding: $space-xl; }
 
 .u-pl-nm { padding-left: $space-nm; }
 .u-pl-md { padding-left: $space-md; }
+
+.u-pr-md { padding-right: $space-md; }
+
+.u-pt-nm { padding-top: $space-nm; }
+
+.u-pb-nm { padding-bottom: $space-nm; }
 
 .u-pl-md-fixed { padding-left: $space-md + ($label-number-size / 3); }  // Optical fix
 .u-pr-md-fixed { padding-right: $space-md + ($label-number-size / 3); } // Optical fix
