@@ -264,6 +264,9 @@ ul {
 .u-pl-nm { padding-left: $space-nm; }
 .u-pl-md { padding-left: $space-md; }
 
+.u-pl-md-fixed { padding-left: $space-md + ($label-number-size / 3); }  // Optical fix
+.u-pr-md-fixed { padding-right: $space-md + ($label-number-size / 3); } // Optical fix
+
 // Position
 .u-position-a { position: absolute; }
 .u-position-r { position: relative; }
