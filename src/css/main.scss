@@ -32,6 +32,7 @@ $font-sm:   1em;      // 16
 $font-nm:   1.125em;  // 18
 $font-md:   1.5em;    // 24
 $font-lg:   2em;      // 32
+$font-xl:   3em;      // 48
 $font-xxl:  4em;      // 64
 
 // Layout
@@ -186,6 +187,7 @@ ul {
 
 .u-txsize-sm  { font-size: $font-sm; }
 .u-txsize-md  { font-size: $font-md; }
+.u-txsize-xl  { font-size: $font-xl; }
 .u-txsize-xxl { font-size: $font-xxl; }
 
 .u-txuppercase { text-transform: uppercase; }
@@ -196,6 +198,8 @@ ul {
 .u-txalign-center { text-align: center; }
 
 .u-txline-15 { line-height: 1.5; }
+
+.u-txweight-300 { font-weight: 300; }
 
 // Margin
 .u-mt-nm { margin-top: $space-nm; }
