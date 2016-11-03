@@ -62,6 +62,17 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+a,
+a:link,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
 
 
 /*
@@ -94,6 +105,31 @@ html {
   padding: 0 $layout-space;
 }
 
+// Scroll icon above the fold
+.c-scrollpls {
+  background-image: url('../images/scrollpls.svg');
+  height: 3em;
+  bottom: $space-md;
+}
+
+// Buttons :D
+.c-btn {
+  border-radius: .3em;
+
+  &--ghost {
+    opacity: .5;
+    transition: opacity ease .3s;
+
+    border: 1px solid $color-base-white;
+
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: 1;
+    }
+  }
+}
+
 
 
 /*
@@ -104,8 +140,10 @@ html {
 .u-bg-purple { background-color: $color-base-purple; }
 .u-bg-gradient-purple { background-image: linear-gradient(to bottom right, $color-gradient-purple-2, $color-base-purple); }
 
-.u-bg-full      { background-size: 100% auto; }
-.u-bg-norepeat  { background-repeat: no-repeat; }
+.u-bg-fullv       { background-size: auto 100%; }
+.u-bg-fullh       { background-size: 100% auto; }
+.u-bg-norepeat    { background-repeat: no-repeat; }
+.u-bg-centertop   { background-position: top center; }
 
 // Sized
 .u-width-full   { width: 100%; }
@@ -127,9 +165,12 @@ html {
   margin-right: auto;
 }
 
+.u-align-right { float: right; }
+
 // Text (tx)
 .u-txcolor-white { color: $color-base-white; }
 
+.u-txsize-sm  { font-size: $font-sm; }
 .u-txsize-xxl { font-size: $font-xxl; }
 
 .u-txuppercase { text-transform: uppercase; }
@@ -141,3 +182,16 @@ html {
 
 // Margin
 .u-mt-nm { margin-top: $space-nm; }
+
+// Padding
+.u-pa-sm { padding: $space-sm; }
+.u-pa-md { padding: $space-md; }
+
+// Position
+.u-position-a { position: absolute; }
+.u-position-r { position: relative; }
+
+.u-top     { top: 0; }
+.u-bottom  { bottom: 0; }
+.u-left    { left: 0; }
+.u-right   { right: 0; }
