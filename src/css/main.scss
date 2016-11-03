@@ -10,7 +10,6 @@ $color-base-black:  #585858;
 $color-gradient-purple-1:   #BD19F5;
 $color-gradient-purple-2:   #9649BF;
 $color-gradient-grey-1:     #E6E6E6;
-$color-gradient-grey-2:     #DDDDDD;
 $color-gradient-blue-1:     #3C73DB;
 
 // Vertical rhythm
@@ -38,6 +37,12 @@ $font-xxl:  4em;      // 64
 // Layout
 $layout-size:  75em; // 1200
 $layout-space: $vertical-rhythm / 2;
+
+// Radius
+$radius-size: .3em;
+
+// Skill numbers
+$label-number-size: 4em;
 
 
 
@@ -106,7 +111,7 @@ ul {
 
   &--grey {
     background-image: url("../images/poly-black.svg"),
-                      linear-gradient(to bottom right, $color-gradient-grey-2, $color-gradient-grey-1);
+                      linear-gradient(to bottom right, $color-gradient-grey-1, $color-base-white);
   }
 }
 
@@ -125,7 +130,7 @@ ul {
 
 // Buttons :D
 .c-btn {
-  border-radius: .3em;
+  border-radius: $radius-size;
 
   &--ghost {
     opacity: .5;
@@ -141,6 +146,29 @@ ul {
   }
 }
 
+// A block
+.c-island {
+
+  &--shadowed  { box-shadow: 0 0 2em rgba($color-base-black, .2); }
+  &--rounded   { border-radius: $radius-size; }
+}
+
+// Label (Very high specificity)
+.c-label-number {
+  width: $label-number-size;
+  height: $label-number-size;
+
+  line-height: $label-number-size;
+
+  border-radius: 100%;
+  background-image: linear-gradient(to bottom right, $color-gradient-purple-2, $color-base-purple);
+
+  position: absolute;
+  top: 50%;
+  left: -($label-number-size / 2);
+  transform: translateY(-50%);
+}
+
 
 
 /*
@@ -149,22 +177,28 @@ ul {
 
 // Backgrounds
 .u-bg-purple { background-color: $color-base-purple; }
-.u-bg-gradient-purple { background-image: linear-gradient(to bottom right, $color-gradient-purple-2, $color-base-purple); }
+.u-bg-white  { background-color: $color-base-white; }
 
 .u-bg-fullv       { background-size: auto 100%; }
 .u-bg-fullh       { background-size: 100% auto; }
+.u-bg-full        { background-size: 150% 150%; }
+
 .u-bg-norepeat    { background-repeat: no-repeat; }
+
 .u-bg-centertop   { background-position: top center; }
+.u-bg-center      { background-position: center center; }
 
 // Sized
 .u-width-full    { width: 100%; }
 .u-height-full   { height: 100%; }
 
 .u-maxwidth-x17  { max-width: $vertical-rhythm * 17; }
+.u-maxwidth-x12  { max-width: $vertical-rhythm * 9; }
 
 // Display
-.u-display-t { display: table; }
-.u-display-b { display: block; }
+.u-display-t  { display: table; }
+.u-display-tc { display: table-cell; }
+.u-display-b  { display: block; }
 
 // Align
 .u-align-vc {
@@ -178,6 +212,9 @@ ul {
   margin-right: auto;
 }
 
+// Vertical align
+.u-valign-middle { vertical-align: middle; }
+
 .u-align-right { float: right; }
 
 // Text (tx)
@@ -187,6 +224,7 @@ ul {
 
 .u-txsize-sm  { font-size: $font-sm; }
 .u-txsize-md  { font-size: $font-md; }
+.u-txsize-nm  { font-size: $font-nm; }
 .u-txsize-xl  { font-size: $font-xl; }
 .u-txsize-xxl { font-size: $font-xxl; }
 
@@ -196,18 +234,28 @@ ul {
 .u-txfamily-text { font-family: 'Lato', sans-serif; }
 
 .u-txalign-center { text-align: center; }
+.u-txalign-left   { text-align: left; }
 
 .u-txline-15 { line-height: 1.5; }
+.u-txline-14 { line-height: 1.4; }
 
 .u-txweight-300 { font-weight: 300; }
+.u-txweight-400 { font-weight: 400; }
+.u-txweight-700 { font-weight: 700; }
 
 // Margin
+.u-mt-sm { margin-top: $space-sm; }
 .u-mt-nm { margin-top: $space-nm; }
+.u-mt-md { margin-top: $space-md; }
+.u-mt-lg { margin-top: $space-lg; }
 
 // Padding
 .u-pa-sm { padding: $space-sm; }
+.u-pa-nm { padding: $space-nm; }
 .u-pa-md { padding: $space-md; }
 .u-pa-xl { padding: $space-xl; }
+
+.u-pl-nm { padding-left: $space-nm; }
 
 // Position
 .u-position-a { position: absolute; }
