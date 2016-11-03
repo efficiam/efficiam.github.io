@@ -58,6 +58,10 @@ $label-number-size: 4em;
  * Base
  */
 
+html {
+  overflow: hidden;
+}
+
 body,
 html {
   height: 100%;
@@ -71,6 +75,7 @@ html {
 
 body {
   font-family: 'Lato', sans-serif;
+  overflow: auto;
 }
 
 a,
