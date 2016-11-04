@@ -34,6 +34,11 @@ $font-lg:   2em;      // 32
 $font-xl:   3em;      // 48
 $font-xxl:  4em;      // 64
 
+// Breakpoints
+$breakpoint-sm: 31.25em;  // 500
+$breakpoint-md: 53.125em; // 850
+$breakpoint-lg: 100em;    // 1600
+
 // Layout
 $layout-size:  75em; // 1200
 $layout-space: $vertical-rhythm / 2;
@@ -59,7 +64,11 @@ $label-number-size: 4em;
  */
 
 html {
-  overflow: hidden;
+  font-size: 100%;
+
+  @media screen and (max-width: $breakpoint-lg) {
+    font-size: 85%;
+  }
 }
 
 body,
@@ -75,7 +84,6 @@ html {
 
 body {
   font-family: 'Lato', sans-serif;
-  overflow: auto;
 }
 
 a,
@@ -131,6 +139,10 @@ ul {
   background-image: url('../images/scrollpls.svg');
   height: 3em;
   bottom: $space-md;
+
+  @media screen and (max-width: $breakpoint-md) {
+    bottom: $space-nm;
+  }
 }
 
 // Buttons :D
@@ -189,6 +201,11 @@ ul {
 
   &--left   { left: -($label-number-size / 2); }
   &--right  { right: -($label-number-size / 2); }
+
+  @media screen and (max-width: $breakpoint-md) {
+    position: static;
+    transform: none;
+  }
 }
 
 // Clear float
@@ -215,17 +232,43 @@ ul {
 .u-bg-centertop   { background-position: top center; }
 .u-bg-center      { background-position: center center; }
 
+@media screen and (max-width: $breakpoint-md) {
+  .u-bg-fullh\@md     { background-size: 100% auto; }
+  .u-bg-topleft\@md   { background-position: 0 0; }
+  .u-bg-repeat\@md    { background-repeat: repeat; }
+}
+
 // Sized
 .u-width-full    { width: 100%; }
 .u-height-full   { height: 100%; }
 
+.u-width-a       { width: auto; }
+
+.u-width-14      { width: 14em; }
+.u-height-20     { height: 10em; }
+
 .u-maxwidth-x17  { max-width: $vertical-rhythm * 17; }
 .u-maxwidth-x9h  { max-width: $vertical-rhythm * 9.5; }
+
+@media screen and (max-width: $breakpoint-md) {
+  .u-width-a\@md  { width: auto; }
+  .u-height-a\@md { height: auto; }
+
+  .u-maxwidth-x10\@md { max-width: $vertical-rhythm * 10; }
+}
 
 // Display
 .u-display-t  { display: table; }
 .u-display-tc { display: table-cell; }
 .u-display-b  { display: block; }
+
+@media screen and (max-width: $breakpoint-md) {
+  .u-display-b\@md { display: block; }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+  .u-display-n\@sm { display: none; }
+}
 
 // Align
 .u-align-vc {
@@ -234,15 +277,20 @@ ul {
   transform: translateY(-50%);
 }
 
-.u-align-hc {
-  margin-left: auto;
-  margin-right: auto;
+.u-align-right { float: right; }
+.u-align-left  { float: left; }
+
+@media screen and (max-width: $breakpoint-md) {
+  .u-align-nvc\@md {
+    position: static;
+    transform: none;
+  }
+
+  .u-align-n\@md { float: none; }
 }
 
 // Vertical align
 .u-valign-middle { vertical-align: middle; }
-
-.u-align-right { float: right; }
 
 // Text (tx)
 .u-txcolor-white  { color: $color-base-white; }
@@ -270,11 +318,37 @@ ul {
 .u-txweight-400 { font-weight: 400; }
 .u-txweight-700 { font-weight: 700; }
 
+@media screen and (max-width: $breakpoint-md) {
+  .u-txalign-center\@md { text-align: center; }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+  .u-txsize-70p\@sm { font-size: 70%; }
+
+  .u-txalign-left\@sm { text-align: left; }
+}
+
 // Margin
 .u-mt-sm { margin-top: $space-sm; }
 .u-mt-nm { margin-top: $space-nm; }
 .u-mt-md { margin-top: $space-md; }
 .u-mt-lg { margin-top: $space-lg; }
+
+.u-ml-a { margin-left: auto; }
+.u-mr-a { margin-right: auto; }
+
+.u-ml-hnumber { margin-left: $label-number-size / 2; }
+.u-mr-hnumber { margin-right: $label-number-size / 2; }
+
+@media screen and (max-width: $breakpoint-md) {
+  .u-ml-n\@md { margin-left: 0; }
+  .u-mr-n\@md { margin-right: 0; }
+
+  .u-ml-a\@md { margin-left: auto; }
+  .u-mr-a\@md { margin-right: auto; }
+
+  .u-mt-sm\@md { margin-top: $space-sm; }
+}
 
 // Padding
 .u-pa-sm { padding: $space-sm; }
@@ -289,11 +363,27 @@ ul {
 .u-pr-md { padding-right: $space-md; }
 
 .u-pt-nm { padding-top: $space-nm; }
+.u-pt-xl { padding-top: $space-xl; }
 
 .u-pb-nm { padding-bottom: $space-nm; }
+.u-pb-xl { padding-bottom: $space-xl; }
 
 .u-pl-md-fixed { padding-left: $space-md + ($label-number-size / 3); }  // Optical fix
 .u-pr-md-fixed { padding-right: $space-md + ($label-number-size / 3); } // Optical fix
+
+@media screen and (max-width: $breakpoint-md) {
+  .u-pa-nm\@md { padding: $space-nm; }
+  .u-pr-n\@md { padding-right: 0; }
+  .u-pl-n\@md { padding-left: 0; }
+
+  .u-pt-lg\@md { padding-top: $space-lg; }
+  .u-pb-lg\@md { padding-bottom: $space-lg; }
+
+  .u-pt-xl\@md { padding-top: $space-xl; }
+  .u-pb-xl\@md { padding-bottom: $space-xl; }
+
+  .u-pl-md\@md { padding-left: $space-md; }
+}
 
 // Position
 .u-position-a { position: absolute; }
