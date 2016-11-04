@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="30" height="50" viewBox="0 0 30 50" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="90" viewBox="0 0 60 90" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
-    <rect id="a" width="29.741" height="49.568" rx="14.871"/>
-    <mask id="b" width="29.741" height="49.568" x="0" y="0" fill="white">
+    <rect id="a" width="49.568" height="82.284" rx="24.784"/>
+    <mask id="b" width="49.568" height="82.284" x="0" y="0" fill="white">
       <use xlink:href="#a"/>
     </mask>
     <linearGradient id="c" x1="50%" x2="50%" y1="0%" y2="98.154%">
@@ -9,9 +9,9 @@
       <stop stop-color="#FFFFFF" offset="100%"/>
     </linearGradient>
   </defs>
-  <g fill="none" fill-rule="evenodd" opacity=".5">
-    <use stroke="#FFFFFF" stroke-width="2" mask="url(#b)" xlink:href="#a"/>
-    <circle cx="14.97" cy="21.847" r="3.47" fill="#FFFFFF"/>
-    <path fill="url(#c)" d="M14.969663,25.3166504 C16.8859748,25.3166504 18.4394524,23.7631728 18.4394524,21.846861 C18.4394524,19.9305492 16.8859748,6.7281488 14.969663,6.7281488 C13.0533512,6.7281488 11.4998736,19.9305492 11.4998736,21.846861 C11.4998736,23.7631728 13.0533512,25.3166504 14.969663,25.3166504 Z" opacity=".6"/>
+  <g fill="none" fill-rule="evenodd" transform="translate(5 4)" opacity=".5">
+    <use stroke="#FFFFFF" stroke-width="6" mask="url(#b)" xlink:href="#a"/>
+    <ellipse cx="24.949" cy="40.266" fill="#FFFFFF" rx="5.783" ry="5.76"/>
+    <path fill="url(#c)" d="M24.9494383,46.0256397 C28.1432913,46.0256397 30.7324207,43.4468668 30.7324207,40.2657893 C30.7324207,37.0847117 28.1432913,15.168727 24.9494383,15.168727 C21.7555853,15.168727 19.1664559,37.0847117 19.1664559,40.2657893 C19.1664559,43.4468668 21.7555853,46.0256397 24.9494383,46.0256397 Z" opacity=".6"/>
   </g>
 </svg>
