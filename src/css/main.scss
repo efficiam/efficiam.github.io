@@ -373,16 +373,18 @@ ul {
 
 @media screen and (max-width: $breakpoint-md) {
   .u-pa-nm\@md { padding: $space-nm; }
+
   .u-pr-n\@md { padding-right: 0; }
   .u-pl-n\@md { padding-left: 0; }
+
+  .u-pr-md\@md { padding-right: $space-md; }
+  .u-pl-md\@md { padding-left: $space-md; }
 
   .u-pt-lg\@md { padding-top: $space-lg; }
   .u-pb-lg\@md { padding-bottom: $space-lg; }
 
   .u-pt-xl\@md { padding-top: $space-xl; }
   .u-pb-xl\@md { padding-bottom: $space-xl; }
-
-  .u-pl-md\@md { padding-left: $space-md; }
 }
 
 // Position
