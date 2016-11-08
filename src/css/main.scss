@@ -137,7 +137,7 @@ ul {
 // Scroll icon above the fold
 .c-scrollpls {
   background-image: url('../images/scrollpls.svg');
-  height: 3.5em;
+  height: 4em;
   bottom: $space-md;
 
   @media screen and (max-width: $breakpoint-md) {
@@ -168,7 +168,7 @@ ul {
     opacity: .5;
     transition: opacity ease .3s;
 
-    border: 1px solid $color-base-white;
+    border: 2px solid $color-base-white;
 
     &:hover,
     &:active,
