@@ -291,6 +291,7 @@ ul {
 
 // Vertical align
 .u-valign-middle { vertical-align: middle; }
+.u-valign-wbl    { vertical-align: -webkit-baseline-middle; }
 
 // Text (tx)
 .u-txcolor-white  { color: $color-base-white; }
