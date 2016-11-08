@@ -10,7 +10,7 @@
     </linearGradient>
   </defs>
   <g fill="none" fill-rule="evenodd" transform="translate(5 4)" opacity=".5">
-    <use stroke="#FFFFFF" stroke-width="6" mask="url(#b)" xlink:href="#a"/>
+    <use stroke="#FFFFFF" stroke-width="8" mask="url(#b)" xlink:href="#a"/>
     <ellipse cx="24.949" cy="40.266" fill="#FFFFFF" rx="5.783" ry="5.76"/>
     <path fill="url(#c)" d="M24.9494383,46.0256397 C28.1432913,46.0256397 30.7324207,43.4468668 30.7324207,40.2657893 C30.7324207,37.0847117 28.1432913,15.168727 24.9494383,15.168727 C21.7555853,15.168727 19.1664559,37.0847117 19.1664559,40.2657893 C19.1664559,43.4468668 21.7555853,46.0256397 24.9494383,46.0256397 Z" opacity=".6"/>
   </g>
