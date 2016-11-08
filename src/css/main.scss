@@ -311,12 +311,15 @@ ul {
 .u-txalign-center { text-align: center; }
 .u-txalign-left   { text-align: left; }
 
+.u-txline-0  { line-height: 0; }
 .u-txline-15 { line-height: 1.5; }
 .u-txline-14 { line-height: 1.4; }
 
 .u-txweight-300 { font-weight: 300; }
 .u-txweight-400 { font-weight: 400; }
 .u-txweight-700 { font-weight: 700; }
+
+.u-txspace-008 { letter-spacing: 0.08em; }
 
 @media screen and (max-width: $breakpoint-md) {
   .u-txalign-center\@md { text-align: center; }
@@ -362,9 +365,11 @@ ul {
 
 .u-pr-md { padding-right: $space-md; }
 
+.u-pt-sm { padding-top: $space-sm; }
 .u-pt-nm { padding-top: $space-nm; }
 .u-pt-xl { padding-top: $space-xl; }
 
+.u-pb-sm { padding-bottom: $space-sm; }
 .u-pb-nm { padding-bottom: $space-nm; }
 .u-pb-xl { padding-bottom: $space-xl; }
 
