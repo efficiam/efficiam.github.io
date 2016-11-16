@@ -1,0 +1,13 @@
+/*
+ * Scollpls (components)
+ */
+
+.c-scrollpls {
+  background-image: url('../images/scrollpls.svg');
+  height: 4em;
+  bottom: $space-md;
+
+  @media screen and (max-width: $breakpoint-md) {
+    bottom: $space-nm;
+  }
+}

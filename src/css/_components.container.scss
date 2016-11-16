@@ -1,0 +1,8 @@
+/*
+ * Container (components)
+ */
+
+.c-container {
+  max-width: $layout-size + $layout-space;
+  padding: 0 $layout-space;
+}

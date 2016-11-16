@@ -1,0 +1,41 @@
+/*
+ * Padding (utilities)
+ */
+
+.u-pa-sm { padding: $space-sm; }
+.u-pa-nm { padding: $space-nm; }
+.u-pa-md { padding: $space-md; }
+.u-pa-lg { padding: $space-lg; }
+.u-pa-xl { padding: $space-xl; }
+
+.u-pl-nm { padding-left: $space-nm; }
+.u-pl-md { padding-left: $space-md; }
+
+.u-pr-md { padding-right: $space-md; }
+
+.u-pt-sm { padding-top: $space-sm; }
+.u-pt-nm { padding-top: $space-nm; }
+.u-pt-xl { padding-top: $space-xl; }
+
+.u-pb-sm { padding-bottom: $space-sm; }
+.u-pb-nm { padding-bottom: $space-nm; }
+.u-pb-xl { padding-bottom: $space-xl; }
+
+.u-pl-md-fixed { padding-left: $space-md + ($label-number-size / 3); }  // Optical fix
+.u-pr-md-fixed { padding-right: $space-md + ($label-number-size / 3); } // Optical fix
+
+@media screen and (max-width: $breakpoint-md) {
+  .u-pa-nm\@md { padding: $space-nm; }
+
+  .u-pr-n\@md { padding-right: 0; }
+  .u-pl-n\@md { padding-left: 0; }
+
+  .u-pr-md\@md { padding-right: $space-md; }
+  .u-pl-md\@md { padding-left: $space-md; }
+
+  .u-pt-lg\@md { padding-top: $space-lg; }
+  .u-pb-lg\@md { padding-bottom: $space-lg; }
+
+  .u-pt-xl\@md { padding-top: $space-xl; }
+  .u-pb-xl\@md { padding-bottom: $space-xl; }
+}

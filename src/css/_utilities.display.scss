@@ -1,0 +1,15 @@
+/*
+ * Display (utilities)
+ */
+
+.u-display-t  { display: table; }
+.u-display-tc { display: table-cell; }
+.u-display-b  { display: block; }
+
+@media screen and (max-width: $breakpoint-md) {
+  .u-display-b\@md { display: block; }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+  .u-display-n\@sm { display: none; }
+}

@@ -1,0 +1,16 @@
+/*
+ * Poly-section (components) 
+ */
+
+.c-poly-section {
+
+  &--purple {
+    background-image: url("../images/poly-white.svg"),
+                      linear-gradient(to right, $color-gradient-purple-1, $color-gradient-blue-1);
+  }
+
+  &--grey {
+    background-image: url("../images/poly-black.svg"),
+                      linear-gradient(to right, $color-gradient-grey-1, $color-base-white);
+  }
+}

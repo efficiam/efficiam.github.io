@@ -1,0 +1,21 @@
+/*
+ * Sizes (utilities)
+ */
+
+.u-width-full    { width: 100%; }
+.u-height-full   { height: 100%; }
+
+.u-width-a       { width: auto; }
+
+.u-width-14      { width: 14em; }
+.u-height-20     { height: 10em; }
+
+.u-maxwidth-x17  { max-width: $vertical-rhythm * 17; }
+.u-maxwidth-x9h  { max-width: $vertical-rhythm * 9.5; }
+
+@media screen and (max-width: $breakpoint-md) {
+  .u-width-a\@md  { width: auto; }
+  .u-height-a\@md { height: auto; }
+
+  .u-maxwidth-x10\@md { max-width: $vertical-rhythm * 10; }
+}

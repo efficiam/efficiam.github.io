@@ -1,0 +1,22 @@
+/*
+ * Background (utilities)
+ */
+
+.u-bg-purple { background-color: $color-base-purple; }
+.u-bg-white  { background-color: $color-base-white; }
+
+.u-bg-cover       { background-size: cover; }
+.u-bg-fullv       { background-size: auto 100%; }
+.u-bg-fullh       { background-size: 100% auto; }
+.u-bg-full        { background-size: 150% 150%; }
+
+.u-bg-norepeat    { background-repeat: no-repeat; }
+
+.u-bg-centertop   { background-position: top center; }
+.u-bg-center      { background-position: center center; }
+
+@media screen and (max-width: $breakpoint-md) {
+  .u-bg-fullh\@md     { background-size: 100% auto; }
+  .u-bg-topleft\@md   { background-position: 0 0; }
+  .u-bg-repeat\@md    { background-repeat: repeat; }
+}

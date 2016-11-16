@@ -1,0 +1,41 @@
+/*
+ * Text (utilities)
+ */
+
+.u-txcolor-white  { color: $color-base-white; }
+.u-txcolor-purple { color: $color-base-purple; }
+.u-txcolor-black  { color: $color-base-black; }
+
+.u-txsize-sm  { font-size: $font-sm; }
+.u-txsize-md  { font-size: $font-md; }
+.u-txsize-nm  { font-size: $font-nm; }
+.u-txsize-xl  { font-size: $font-xl; }
+.u-txsize-xxl { font-size: $font-xxl; }
+
+.u-txuppercase { text-transform: uppercase; }
+
+.u-txfamily-logo { font-family: 'Raleway', sans-serif; }
+.u-txfamily-text { font-family: 'Lato', sans-serif; }
+
+.u-txalign-center { text-align: center; }
+.u-txalign-left   { text-align: left; }
+
+.u-txline-0  { line-height: 0; }
+.u-txline-15 { line-height: 1.5; }
+.u-txline-14 { line-height: 1.4; }
+
+.u-txweight-300 { font-weight: 300; }
+.u-txweight-400 { font-weight: 400; }
+.u-txweight-700 { font-weight: 700; }
+
+.u-txspace-008 { letter-spacing: 0.08em; }
+
+@media screen and (max-width: $breakpoint-md) {
+  .u-txalign-center\@md { text-align: center; }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+  .u-txsize-70p\@sm { font-size: 70%; }
+
+  .u-txalign-left\@sm { text-align: left; }
+}

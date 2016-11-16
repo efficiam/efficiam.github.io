@@ -1,0 +1,25 @@
+/*
+ * Label-number (components)
+ */
+
+.c-label-number {
+  width: $label-number-size;
+  height: $label-number-size;
+
+  line-height: $label-number-size;
+
+  border-radius: 100%;
+  background-image: linear-gradient(to bottom right, $color-gradient-purple-2, $color-base-purple);
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &--left   { left: -($label-number-size / 2); }
+  &--right  { right: -($label-number-size / 2); }
+
+  @media screen and (max-width: $breakpoint-md) {
+    position: static;
+    transform: none;
+  }
+}

@@ -1,0 +1,9 @@
+/*
+ * Island (components)
+ */
+
+.c-island {
+
+  &--shadowed  { box-shadow: 0 0 2em rgba($color-base-black, .2); }
+  &--rounded   { border-radius: $radius-size; }
+}
