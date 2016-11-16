@@ -5,6 +5,9 @@
 .u-bg-purple { background-color: $color-base-purple; }
 .u-bg-white  { background-color: $color-base-white; }
 
+.u-bg-grad-purple { background-image: linear-gradient(to right, $color-gradient-purple-1, $color-gradient-blue-1); }
+.u-bg-grad-grey   { background-image: linear-gradient(to right, $color-gradient-grey-1, $color-base-white); }
+
 .u-bg-cover       { background-size: cover; }
 .u-bg-fullv       { background-size: auto 100%; }
 .u-bg-fullh       { background-size: 100% auto; }
