@@ -19,6 +19,7 @@
 
 .u-pb-sm { padding-bottom: $space-sm; }
 .u-pb-nm { padding-bottom: $space-nm; }
+.u-pb-md { padding-bottom: $space-md; }
 .u-pb-xl { padding-bottom: $space-xl; }
 
 .u-pl-md-fixed { padding-left: $space-md + ($label-number-size / 3); }  // Optical fix
@@ -26,6 +27,7 @@
 
 @media screen and (max-width: $breakpoint-md) {
   .u-pa-nm\@md { padding: $space-nm; }
+  .u-pb-nm\@md { padding-bottom: $space-nm; }
 
   .u-pr-n\@md { padding-right: 0; }
   .u-pl-n\@md { padding-left: 0; }
