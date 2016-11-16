@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1024" viewBox="0 0 1440 1024">
   <g fill="#FFFFFF" fill-rule="evenodd" transform="translate(-128 -78)">
-    <polygon fill-opacity=".04" points="578.296 675.206 519.843 741.942 637.797 815.155"/>
-    <polygon fill-opacity=".09" points="521.331 743.354 541.831 882.542 637.725 815.255"/>
+    <polygon fill-opacity=".04" points="578.296 675.206 518.73 742.476 637.797 815.155"/>
+    <polygon fill-opacity=".09" points="518.646 742.485 541.831 882.542 637.725 815.255"/>
     <polygon fill-opacity=".03" points="578.253 675.147 511.555 591.638 518.673 742.454"/>
-    <polygon fill-opacity=".07" points="353.323 812.938 452.928 658.386 523.066 745.937"/>
+    <polygon fill-opacity=".07" points="353.323 812.938 452.928 658.386 518.585 742.482"/>
     <polygon fill-opacity=".12" points="353.282 813 228.18 878.109 541.763 882.507"/>
     <polygon fill-opacity=".16" points="541.823 882.558 420.235 960.374 619.314 1020.9"/>
     <polygon fill-opacity=".05" points="228.34 878.187 340.752 1001.138 420.156 960.361"/>
@@ -18,7 +18,7 @@
     <polygon fill-opacity=".02" points="128.287 624.807 360.87 582.457 276.065 700.387"/>
     <polygon fill-opacity=".15" points="203.927 1022.295 0 912.51 121.785 749.078"/>
     <polygon fill-opacity=".05" points="203.859 1022.296 19.342 1101.784 75.519 953.353"/>
-    <polygon fill-opacity=".11" points="452.964 658.353 511.418 591.57 521.531 743.238"/>
+    <polygon fill-opacity=".11" points="452.964 658.353 511.418 591.57 518.614 742.449"/>
     <polygon fill-opacity=".08" points="360.888 582.489 414.912 431.771 452.91 658.4"/>
     <polygon fill-opacity=".05" points="128.659 626.22 199.566 434.633 360.868 582.414"/>
     <polygon fill-opacity=".08" points="414.971 431.795 611.575 459.303 511.511 591.431"/>
