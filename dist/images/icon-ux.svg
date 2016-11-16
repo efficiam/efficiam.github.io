@@ -1,24 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="170" height="170" viewBox="0 0 170 170">
   <defs>
-    <linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="98.286%">
-      <stop stop-color="#8D50CF" stop-opacity="0" offset="0%"/>
-      <stop stop-color="#8D50CF" offset="50.937%"/>
-      <stop stop-color="#8D50CF" stop-opacity="0" offset="100%"/>
-    </linearGradient>
-    <linearGradient id="b" x1="0%" y1="0%" y2="97.761%">
+    <linearGradient id="a" x1="0%" y1="0%" y2="97.761%">
       <stop stop-color="#9648BF" offset="0%"/>
       <stop stop-color="#7E5CE8" offset="100%"/>
     </linearGradient>
   </defs>
-  <g fill="none" fill-rule="evenodd" transform="translate(-8 -8)">
-    <g stroke="url(#a)" opacity=".15" stroke-linecap="square">
-      <g transform="translate(42.472)">
-        <path d="M2.19685039 184.265873L2.19685039.734126984M34.4173228 184.265873L34.4173228.734126984M66.6377953 184.265873L66.6377953.734126984M98.8582677 184.265873L98.8582677.734126984"/>
-      </g>
-      <g transform="rotate(90 71.764 113.736)">
-        <path d="M2.19685039 184.265873L2.19685039.734126984M34.4173228 184.265873L34.4173228.734126984M66.6377953 184.265873L66.6377953.734126984M98.8582677 184.265873L98.8582677.734126984"/>
-      </g>
-    </g>
-    <path stroke="url(#b)" stroke-width="3" d="M50,130.279672 C50,130.279672 61.3640183,98.902075 73.5149933,90.384976 C85.6659683,81.867877 92.1105172,109.606001 107.965388,99.4474355 C123.820259,89.2888698 136.169826,55 136.169826,55" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="none" fill-rule="evenodd" transform="translate(13 13)">
+    <circle cx="72.5" cy="72.5" r="72.5" fill="url(#a)" fill-opacity=".7"/>
+    <path fill="url(#a)" d="M124.906498,122.598159 C137.354127,109.580639 145,91.9332144 145,72.5 C145,53.3122163 137.546034,35.8653996 125.375815,22.8972629 L71.6830961,72.9665332 L124.906498,122.598159 L124.906498,122.598159 Z"/>
+    <path fill="#FFFFFF" fill-opacity=".05" d="M144.475247,81.2676161 C144.821706,78.3934719 145,75.4675573 145,72.5 C145,53.3122163 137.546034,35.8653996 125.375815,22.8972629 L77.7942222,67.2678159 C87.8832982,79.3287099 103.045786,87 120,87 C128.792943,87 137.103956,84.9366085 144.475247,81.2676161 Z"/>
   </g>
 </svg>
