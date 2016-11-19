@@ -5,6 +5,9 @@
 .u-bg-purple { background-color: $color-base-purple; }
 .u-bg-white  { background-color: $color-base-white; }
 
+.u-bg-poly { position: relative; }
+.u-bg-poly canvas { top: 0; left: 0; position: absolute; z-index: -1; }
+
 .u-bg-grad-purple { background-image: linear-gradient(to right, $color-gradient-purple-1, $color-gradient-blue-1); }
 .u-bg-grad-grey   { background-image: linear-gradient(to right, $color-gradient-grey-1, $color-base-white); }
 
