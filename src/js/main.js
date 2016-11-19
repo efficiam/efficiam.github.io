@@ -85,8 +85,8 @@ Number.isInteger = Number.isInteger || function(value) {
   
   var blue = new THREE.Color(0xbd19f5);
   var violet = new THREE.Color(0x3c73db);
-  geometry.faces[0].vertexColors = [blue, blue, violet];
-  geometry.faces[1].vertexColors = [blue, violet, violet];
+  geometry.faces[0].vertexColors = [violet, violet, blue];
+  geometry.faces[1].vertexColors = [violet, blue, blue];
   scene.add(plane);
   
   var geometry = new THREE.PlaneGeometry(30, 50, 10, 15);
