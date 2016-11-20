@@ -56,81 +56,113 @@ Number.isInteger = Number.isInteger || function(value) {
   window.FadeOnScroll = FadeOnScroll;
   
   // Three js to refactor
+  var windowWidth = window.outerWidth;
+  var windowHeight = window.outerHeight;
   var container = document.querySelector('.u-bg-poly');
   var width = container.getBoundingClientRect().width;
   var height = container.getBoundingClientRect().height;
   var scene = new THREE.Scene();
-  var camera = new THREE.PerspectiveCamera( 75, width / height, 0.1, 1000 );
-  
+  var camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+  var blue = new THREE.Color(0xbd19f5);
+  var violet = new THREE.Color(0x3c73db);
+  var gradientGeometry;
+  var gradientMaterial;
+  var gradientPlane;
+  var polyGeometry;
+  var polyMaterial;
+  var polyPlane;
   var renderer = new THREE.WebGLRenderer();
+
   renderer.setSize(width, height);
   container.appendChild(renderer.domElement);
   
-  var light = new THREE.PointLight();
-  light.position.set(200, 200, 400);
+  var light = new THREE.DirectionalLight();
+  light.position.set(0, 300, 250);
+  // var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1.3 );/
   scene.add(light);
   
+  camera.position.z = 12;  
   var compound = function(x, time) {
-    return (Math.sin(x + time /500) + Math.sin(2.2 * x + time /500 - 2.3) + Math.sin(4.75 * x + time /300 + 8)) / 8
+    return (Math.sin(x + time /500) + Math.sin(2.2 * x + time /500 - 2.3) + Math.sin(4.75 * x + time /500 + 8)) / 8
   };
   
-  var geometry = new THREE.PlaneGeometry(50, 50);
-  var material = new THREE.MeshBasicMaterial({
-    vertexColors: THREE.VertexColors
-  });
+  var initialTime = new Date();
   
-  var plane = new THREE.Mesh(geometry, material);
-  plane.position.z = -5
-  plane.rotation.z += 2
-  
-  var blue = new THREE.Color(0xbd19f5);
-  var violet = new THREE.Color(0x3c73db);
-  geometry.faces[0].vertexColors = [violet, violet, blue];
-  geometry.faces[1].vertexColors = [violet, blue, blue];
-  scene.add(plane);
-  
-  var geometry = new THREE.PlaneGeometry(30, 50, 10, 15);
-  var material = new THREE.MeshPhongMaterial({
-    color: 0xffffff,
-    specular: 0xF52E0F,
-    shading: THREE.FlatShading,
-    blending: THREE.MultiplyBlending,
-    transparent: true
-  });
-  geometry.vertices.forEach(function(v) {
-    v.x += (Math.random() - 0.5);
-    v.y += (Math.random() - 0.5);
-  });
-  var plane = new THREE.Mesh(geometry, material);
-  plane.rotation.z += 2
-  scene.add(plane);
-  
-  camera.position.z = 10
-  
-  var initialTime = new Date()
+  function addPlanes(width, height) {
+    var ratio = width/height;
+    var round = Math.round;
+    var width = round(40 * ratio);
+    var height = round(40 * ratio);
+    var widthSegments = round(10 * ratio);
+    var heightSegments = round(10 * ratio);
+    gradientGeometry = new THREE.PlaneGeometry(width, height);
+    gradientMaterial = new THREE.MeshBasicMaterial({
+      vertexColors: THREE.VertexColors
+    });
+    
+    gradientPlane = new THREE.Mesh(gradientGeometry, gradientMaterial);
+    gradientPlane.position.z = -5
+    gradientPlane.rotation.z -= 1
+    
+    gradientGeometry.faces[0].vertexColors = [violet, violet, blue];
+    gradientGeometry.faces[1].vertexColors = [violet, blue, blue];
+    scene.add(gradientPlane);
+    
+    polyGeometry = new THREE.PlaneGeometry(
+      width, 
+      height,
+      widthSegments,
+      heightSegments
+    );
+
+    polyMaterial = new THREE.MeshPhongMaterial({
+      color: 0xffffff,
+      // specular: 0xF52E0F,rgb(156, 74, 146)
+      shading: THREE.FlatShading,
+      blending: THREE.MultiplyBlending,
+      transparent: true
+    });
+    
+    polyGeometry.vertices.forEach(function(v) {
+      v.x += (Math.random() - 0.5)*2.2;
+      v.y += (Math.random() - 0.5)*2.2;
+    });
+    
+    
+    polyPlane = new THREE.Mesh(polyGeometry, polyMaterial);
+    polyPlane.rotation.z -= 1
+    
+    scene.add(polyPlane);
+  }
   
   function render() {
-    requestAnimationFrame( render );
-    var newTime = new Date()
-    var time = newTime - initialTime
-    geometry.vertices.forEach(function(v) {
-      v.z =  compound(v.x, time/3);
+    requestAnimationFrame(render);
+    var newTime = new Date();
+    var time = (newTime - initialTime) / 3;
+    polyGeometry.vertices.reverse().forEach(function(v) {
+      v.z =  compound(v.x, time);
     });
-    plane.material.needsUpdate =true
-    plane.geometry.verticesNeedUpdate = true;  
+    polyPlane.material.needsUpdate =true
+    polyPlane.geometry.verticesNeedUpdate = true;
   	renderer.render(scene, camera);
   }
   
+  addPlanes(width, height);
   render();
   
-  window.addEventListener( 'resize', onWindowResize, false );
+  window.addEventListener('resize', onWindowResize, false);
   
   function onWindowResize() {
-    var width = container.getBoundingClientRect().width;
-    var height = container.getBoundingClientRect().height;
-		camera.aspect = width / height;
+    if (windowWidth === window.outerWidth && 
+        windowHeight === window.outerHeight) return;
+    var newWidth = container.getBoundingClientRect().width;
+    var newHeight = container.getBoundingClientRect().height;
+    scene.children.pop();
+    scene.children.pop();
+    addPlanes(newWidth, newHeight);
+    camera.aspect = newWidth / newHeight;
 		camera.updateProjectionMatrix();
-		renderer.setSize( width, height );
+		renderer.setSize(newWidth, newHeight);
 	}
 
 
