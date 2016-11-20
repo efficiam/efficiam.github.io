@@ -77,7 +77,7 @@ Number.isInteger = Number.isInteger || function(value) {
   container.appendChild(renderer.domElement);
   
   var light = new THREE.PointLight();
-  light.position.set(0, 300, 400);
+  light.position.set(0, -300, 400);
   scene.add(light);
   
   camera.position.z = 12;  
