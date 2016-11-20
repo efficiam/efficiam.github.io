@@ -54,11 +54,11 @@ Number.isInteger = Number.isInteger || function(value) {
   }
 
   window.FadeOnScroll = FadeOnScroll;
-  
+
   // Three js to refactor
   addPolyTo(document.querySelector('.u-bg-poly'));
   addPolyTo(document.querySelector('footer'), {size: 'small', lightPosition: 'up'});
-  
+
   function addPolyTo(el, opts) {
     var opts = opts || {};
     var windowWidth = window.outerWidth;
@@ -79,35 +79,18 @@ Number.isInteger = Number.isInteger || function(value) {
 
     renderer.setSize(width, height);
     el.appendChild(renderer.domElement);
-    
-    var light = new THREE.PointLight(0xffffff, 0.1);
-    // var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
-    var lightPosition; 
-    switch (opts.lightPosition) {
-      case 'left':
-        lightPosition = [400, 0, 500];
-        break;
-      case 'right':
-        lightPosition = [-400, 0, 500];
-        break;
-      case 'up':
-        lightPosition = [0, 400, 500];
-        break;
-      case 'down':
-      default:
-        lightPosition = [0, -400, 500];
-        
-    }
-    light.position.set.apply(light.position,lightPosition);
+
+    var light = new THREE.DirectionalLight(0xffffff, 0.8);
+    light.position.set(0, 1, 0);
     scene.add(light);
-    
-    camera.position.z = 12;  
+
+    camera.position.z = 12;
     var compound = function(x, time) {
       return (Math.sin(x + time /500) + Math.sin(2.2 * x + time /500 - 2.3) + Math.sin(4.75 * x + time /500 + 8)) / 8
     };
-    
+
     var initialTime = new Date();
-    
+
     function addPlanes(width, height) {
       var ratio = width/height;
       var round = Math.round;
@@ -117,22 +100,22 @@ Number.isInteger = Number.isInteger || function(value) {
       var height = round(baseSize * ratio);
       var widthSegments = round(baseSegments * ratio);
       var heightSegments = round(baseSegments * ratio);
-      
+
       gradientGeometry = new THREE.PlaneGeometry(width, height);
       gradientMaterial = new THREE.MeshBasicMaterial({
         vertexColors: THREE.VertexColors
       });
-      
+
       gradientPlane = new THREE.Mesh(gradientGeometry, gradientMaterial);
       gradientPlane.position.z = -5
       gradientPlane.rotation.z -= 1
-      
+
       gradientGeometry.faces[0].vertexColors = [violet, violet, blue];
       gradientGeometry.faces[1].vertexColors = [violet, blue, blue];
       scene.add(gradientPlane);
-      
+
       polyGeometry = new THREE.PlaneGeometry(
-        width, 
+        width,
         height,
         widthSegments,
         heightSegments
@@ -145,19 +128,19 @@ Number.isInteger = Number.isInteger || function(value) {
         blending: THREE.AdditiveBlending,
         transparent: true
       });
-      
+
       polyGeometry.vertices.forEach(function(v) {
         v.x += (Math.random() - 0.5)*1.5;
         v.y += (Math.random() - 0.5)*1.5;
       });
-      
-      
+
+
       polyPlane = new THREE.Mesh(polyGeometry, polyMaterial);
       polyPlane.rotation.z -= 1
-      
+
       scene.add(polyPlane);
     }
-    
+
     function render() {
       requestAnimationFrame(render);
       var newTime = new Date();
@@ -169,14 +152,14 @@ Number.isInteger = Number.isInteger || function(value) {
       polyPlane.geometry.verticesNeedUpdate = true;
     	renderer.render(scene, camera);
     }
-    
+
     addPlanes(width, height);
     render();
-    
+
     window.addEventListener('resize', onWindowResize, false);
-    
+
     function onWindowResize() {
-      if (windowWidth === window.outerWidth && 
+      if (windowWidth === window.outerWidth &&
           windowHeight === window.outerHeight) return;
       var newWidth = el.getBoundingClientRect().width;
       var newHeight = el.getBoundingClientRect().height;
@@ -186,7 +169,7 @@ Number.isInteger = Number.isInteger || function(value) {
       camera.aspect = newWidth / newHeight;
   		camera.updateProjectionMatrix();
   		renderer.setSize(newWidth, newHeight);
-  	}  
+  	}
   }
 
 })(document, window);
