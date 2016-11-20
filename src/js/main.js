@@ -95,7 +95,7 @@ Number.isInteger = Number.isInteger || function(value) {
       var ratio = width/height;
       var round = Math.round;
       var baseSize = 40;
-      var baseSegments = opts.size === 'small' ? 7 : 10;
+      var baseSegments = opts.size === 'small' ? 6 : 10;
       var width = round(baseSize * ratio);
       var height = round(baseSize * ratio);
       var widthSegments = round(baseSegments * ratio);
