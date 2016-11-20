@@ -80,21 +80,22 @@ Number.isInteger = Number.isInteger || function(value) {
     renderer.setSize(width, height);
     el.appendChild(renderer.domElement);
     
-    var light = new THREE.PointLight();
+    var light = new THREE.PointLight(0xffffff, 0.1);
+    // var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
     var lightPosition; 
     switch (opts.lightPosition) {
       case 'left':
-        lightPosition = [300, 0, 500];
+        lightPosition = [400, 0, 500];
         break;
       case 'right':
-        lightPosition = [-300, 0, 500];
+        lightPosition = [-400, 0, 500];
         break;
       case 'up':
-        lightPosition = [0, 300, 500];
+        lightPosition = [0, 400, 500];
         break;
       case 'down':
       default:
-        lightPosition = [0, -300, 500];
+        lightPosition = [0, -400, 500];
         
     }
     light.position.set.apply(light.position,lightPosition);
@@ -141,7 +142,7 @@ Number.isInteger = Number.isInteger || function(value) {
         color: 0xffffff,
         specular: 0xff0000,
         shading: THREE.FlatShading,
-        blending: THREE.MultiplyBlending,
+        blending: THREE.AdditiveBlending,
         transparent: true
       });
       
