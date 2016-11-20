@@ -76,8 +76,8 @@ Number.isInteger = Number.isInteger || function(value) {
   renderer.setSize(width, height);
   container.appendChild(renderer.domElement);
   
-  var light = new THREE.DirectionalLight();
-  light.position.set(0, 300, 250);
+  var light = new THREE.PointLight();
+  light.position.set(0, 300, 400);
   scene.add(light);
   
   camera.position.z = 12;  
@@ -139,7 +139,7 @@ Number.isInteger = Number.isInteger || function(value) {
     var newTime = new Date();
     var time = (newTime - initialTime) / 3;
     polyGeometry.vertices.reverse().forEach(function(v) {
-      v.z =  compound(v.x, time);
+      v.z =  compound(v.x/v.y, time);
     });
     polyPlane.material.needsUpdate =true
     polyPlane.geometry.verticesNeedUpdate = true;
