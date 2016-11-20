@@ -78,7 +78,6 @@ Number.isInteger = Number.isInteger || function(value) {
   
   var light = new THREE.DirectionalLight();
   light.position.set(0, 300, 250);
-  // var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1.3 );/
   scene.add(light);
   
   camera.position.z = 12;  
@@ -117,15 +116,15 @@ Number.isInteger = Number.isInteger || function(value) {
 
     polyMaterial = new THREE.MeshPhongMaterial({
       color: 0xffffff,
-      // specular: 0xF52E0F,rgb(156, 74, 146)
+      specular: 0xff0000,
       shading: THREE.FlatShading,
       blending: THREE.MultiplyBlending,
       transparent: true
     });
     
     polyGeometry.vertices.forEach(function(v) {
-      v.x += (Math.random() - 0.5)*2.2;
-      v.y += (Math.random() - 0.5)*2.2;
+      v.x += (Math.random() - 0.5)*1.5;
+      v.y += (Math.random() - 0.5)*1.5;
     });
     
     
