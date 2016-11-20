@@ -19,3 +19,7 @@
 
   .u-maxwidth-x10\@md { max-width: $vertical-rhythm * 10; }
 }
+
+@media screen and (max-width: $breakpoint-sm) {
+  .u-width-12\@sm { width: 12em; }
+}
