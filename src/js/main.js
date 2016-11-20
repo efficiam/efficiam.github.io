@@ -84,17 +84,17 @@ Number.isInteger = Number.isInteger || function(value) {
     var lightPosition; 
     switch (opts.lightPosition) {
       case 'left':
-        lightPosition = [300, 0, 250];
+        lightPosition = [300, 0, 500];
         break;
       case 'right':
-        lightPosition = [-300, 0, 250];
+        lightPosition = [-300, 0, 500];
         break;
       case 'up':
-        lightPosition = [0, 300, 250];
+        lightPosition = [0, 300, 500];
         break;
       case 'down':
       default:
-        lightPosition = [0, -300, 250];
+        lightPosition = [0, -300, 500];
         
     }
     light.position.set.apply(light.position,lightPosition);
