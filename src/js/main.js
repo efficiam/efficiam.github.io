@@ -146,7 +146,7 @@ Number.isInteger = Number.isInteger || function(value) {
       var newTime = new Date();
       var time = (newTime - initialTime) / 3;
       polyGeometry.vertices.forEach(function(v) {
-        v.z =  compound(v.x, time);
+        v.z =  compound(Math.cos(v.x), time);
       });
       polyPlane.material.needsUpdate =true
       polyPlane.geometry.verticesNeedUpdate = true;
