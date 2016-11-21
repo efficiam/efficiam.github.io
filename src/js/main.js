@@ -63,6 +63,8 @@ Number.isInteger = Number.isInteger || function(value) {
     var opts = opts || {};
     var windowWidth = window.outerWidth;
     var windowHeight = window.outerHeight;
+    var screenWidth = screen && screen.width;
+    var screenHeight = screen && screen.height;
     var width = el.getBoundingClientRect().width;
     var height = el.getBoundingClientRect().height;
     var scene = new THREE.Scene();
@@ -160,16 +162,18 @@ Number.isInteger = Number.isInteger || function(value) {
     window.addEventListener('orientationchange', onWindowResize, false);
 
     function onWindowResize() {
-      if (windowWidth === window.outerWidth &&
-          windowHeight === window.outerHeight) return;
       var newWidth = el.getBoundingClientRect().width;
       var newHeight = el.getBoundingClientRect().height;
-      scene.children.pop();
-      scene.children.pop();
-      addPlanes(newWidth, newHeight);
-      camera.aspect = newWidth / newHeight;
-  		camera.updateProjectionMatrix();
-  		renderer.setSize(newWidth, newHeight);
+      if (newHeight !== height || newWidth !== width) {
+        height = newHeight;
+        width = newWidth;
+        scene.children.pop();
+        scene.children.pop();
+        addPlanes(newWidth, newHeight);
+        camera.aspect = newWidth / newHeight;
+    		camera.updateProjectionMatrix();
+    		renderer.setSize(newWidth, newHeight);  
+      }
   	}
   }
 
