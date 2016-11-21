@@ -49,14 +49,25 @@ var raf =  window.requestAnimationFrame       ||
       });
     });*/
 
-    (function loop() {
-      self.elements.forEach(function(element) {
-        if(_isOnScreen(element, self.threshold))
-          _show(element);
+    (function loop(elements) {
+      if(!elements.length)
+        return;
+
+      var updatedElements = [];
+
+      elements.forEach(function(element, index) {
+        if(!_isOnScreen(element, self.threshold)) {
+          updatedElements.push(element);
+          return;
+        }
+
+        _show(element);
       });
 
-      raf(loop);
-    })();
+      console.log(1);
+
+      raf(loop.bind(this, updatedElements));
+    })(self.elements);
   };
 
   function _isOnScreen(element, threshold) {
