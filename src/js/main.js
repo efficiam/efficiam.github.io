@@ -10,6 +10,15 @@ var matches = function(el, selector) {
   return (el.matches || el.matchesSelector || el.msMatchesSelector || el.mozMatchesSelector || el.webkitMatchesSelector || el.oMatchesSelector).call(el, selector);
 };
 
+// requestAnimationFrame
+var raf =  window.requestAnimationFrame       ||
+           window.webkitRequestAnimationFrame ||
+           window.mozRequestAnimationFrame    ||
+           window.msRequestAnimationFrame     ||
+           window.oRequestAnimationFrame      ||
+           function(callback){ window.setTimeout(callback, 1000/60) };
+
+
 (function(document, window) {
 
   var FadeOnScroll = function(opts) {
@@ -33,12 +42,21 @@ var matches = function(el, selector) {
         _show(element);
     });
 
-    window.addEventListener('scroll', function() {
+    /*window.addEventListener('scroll', function() {
       self.elements.forEach(function(element) {
         if(_isOnScreen(element, self.threshold))
           _show(element);
       });
-    });
+    });*/
+
+    (function loop() {
+      self.elements.forEach(function(element) {
+        if(_isOnScreen(element, self.threshold))
+          _show(element);
+      });
+
+      raf(loop);
+    })();
   };
 
   function _isOnScreen(element, threshold) {
