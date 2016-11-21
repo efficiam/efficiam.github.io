@@ -5,14 +5,18 @@
       <stop stop-color="#7E5CE8" offset="100%"/>
     </linearGradient>
   </defs>
-  <g fill="none" fill-rule="evenodd" transform="translate(15 15)">
-    <rect width="140" height="140" fill="url(#a)" opacity=".492" rx="5"/>
-    <g transform="translate(25.417 25.278)">
-      <rect width="89.25" height="89.25" fill="url(#a)" opacity=".498" rx="5"/>
-      <g transform="translate(21 24)">
-        <polygon stroke="url(#a)" stroke-width="4" points="23.484 20.432 11.742 40.864 23.484 20.432 0 20.432 23.484 20.432 11.742 0 23.484 20.432 35.226 0 23.484 20.432 46.968 20.432 23.484 20.432 35.226 40.864" stroke-linecap="round" stroke-linejoin="round"/>
-        <ellipse cx="23.935" cy="20.417" fill="url(#a)" rx="14.903" ry="14.972"/>
+  <g fill="none" fill-rule="evenodd">
+    <g transform="translate(15 15)">
+      <rect width="140" height="140" fill="url(#a)" opacity=".492" rx="5"/>
+      <g transform="translate(25.417 25.278)">
+        <rect width="89.25" height="89.25" fill="url(#a)" opacity=".498" rx="5"/>
+        <path fill="#FFFFFF" d="M63.4075779,4.26325641e-14 L5.00579465,4.26325641e-14 C2.23963134,4.26325641e-14 0,2.2411706 0,5.00579465 L0,68.9004498 C1.15824448,68.9665158 2.32521192,69 3.5,69 C36.9132274,69 64,41.9132274 64,8.5 C64,5.61504956 63.7980717,2.777262 63.4075779,4.26325641e-14 Z" opacity=".05"/>
+        <g transform="translate(21 24)">
+          <polygon stroke="url(#a)" stroke-width="4" points="23.484 20.432 11.742 40.864 23.484 20.432 0 20.432 23.484 20.432 11.742 0 23.484 20.432 35.226 0 23.484 20.432 46.968 20.432 23.484 20.432 35.226 40.864" stroke-linecap="round" stroke-linejoin="round"/>
+          <ellipse cx="23.935" cy="20.417" fill="url(#a)" rx="14.903" ry="14.972"/>
+        </g>
       </g>
     </g>
+    <circle cx="85.5" cy="84.5" r="10.5" fill="#000000" opacity=".05"/>
   </g>
 </svg>
