@@ -5,6 +5,11 @@ Number.isInteger = Number.isInteger || function(value) {
     Math.floor(value) === value;
 };
 
+// Matches polyfill
+var matches = function(el, selector) {
+  return (el.matches || el.matchesSelector || el.msMatchesSelector || el.mozMatchesSelector || el.webkitMatchesSelector || el.oMatchesSelector).call(el, selector);
+};
+
 (function(document, window) {
 
   var FadeOnScroll = function(opts) {
@@ -46,11 +51,23 @@ Number.isInteger = Number.isInteger || function(value) {
   function _show(element) {
     element.style.visibility  = 'visible';
     element.style.opacity     = 1;
+
+    if(matches(element, '.js-fadeFromLeft'))
+      element.style.left = '0px';
+
+    if(matches(element, '.js-fadeFromRight'))
+      element.style.right = '0px';
   }
 
   function _hide(element) {
     element.style.visibility  = 'hidden';
     element.style.opacity     = 0;
+
+    if(matches(element, '.js-fadeFromLeft'))
+      element.style.left = '-25px';
+
+    if(matches(element, '.js-fadeFromRight'))
+      element.style.right = '-25px';
   }
 
   window.FadeOnScroll = FadeOnScroll;
@@ -172,7 +189,7 @@ Number.isInteger = Number.isInteger || function(value) {
         addPlanes(newWidth, newHeight);
         camera.aspect = newWidth / newHeight;
     		camera.updateProjectionMatrix();
-    		renderer.setSize(newWidth, newHeight);  
+    		renderer.setSize(newWidth, newHeight);
       }
   	}
   }
