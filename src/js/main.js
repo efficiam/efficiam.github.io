@@ -64,10 +64,10 @@ var matches = function(el, selector) {
     element.style.opacity     = 0;
 
     if(matches(element, '.js-fadeFromLeft'))
-      element.style.left = '-25px';
+      element.style.left = '-50px';
 
     if(matches(element, '.js-fadeFromRight'))
-      element.style.right = '-25px';
+      element.style.right = '-50px';
   }
 
   window.FadeOnScroll = FadeOnScroll;
