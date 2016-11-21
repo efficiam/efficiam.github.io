@@ -157,6 +157,7 @@ Number.isInteger = Number.isInteger || function(value) {
     render();
 
     window.addEventListener('resize', onWindowResize, false);
+    window.addEventListener('orientationchange', onWindowResize, false);
 
     function onWindowResize() {
       if (windowWidth === window.outerWidth &&
