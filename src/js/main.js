@@ -94,7 +94,7 @@ Number.isInteger = Number.isInteger || function(value) {
     function addPlanes(width, height) {
       var ratio = width/height;
       var round = Math.round;
-      var baseSize = 40;
+      var baseSize = 50;
       var baseSegments = opts.size === 'small' ? 5 : 10;
       var width = round(baseSize * ratio);
       var height = round(baseSize * ratio);
@@ -144,7 +144,7 @@ Number.isInteger = Number.isInteger || function(value) {
     function render() {
       requestAnimationFrame(render);
       var newTime = new Date();
-      var time = (newTime - initialTime) / 3;
+      var time = (newTime - initialTime) / 2.5;
       polyGeometry.vertices.forEach(function(v) {
         v.z =  compound(Math.cos(v.x), time);
       });
