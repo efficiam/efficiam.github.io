@@ -88,10 +88,10 @@ var reqAF = window.requestAnimationFrame       ||
     element.style.opacity     = 1;
 
     if(matches(element, '.js-fadeFromLeft'))
-      element.style.left = '0px';
+      element.style.transform = 'translateX(0)';
 
     if(matches(element, '.js-fadeFromRight'))
-      element.style.right = '0px';
+      element.style.transform = 'translateX(0)';
   }
 
   function _hide(element) {
@@ -99,10 +99,10 @@ var reqAF = window.requestAnimationFrame       ||
     element.style.opacity     = 0;
 
     if(matches(element, '.js-fadeFromLeft'))
-      element.style.left = '-50px';
+      element.style.transform = 'translateX(-50px)';
 
     if(matches(element, '.js-fadeFromRight'))
-      element.style.right = '-50px';
+      element.style.transform = 'translateX(50px)';
   }
 
   window.FadeOnScroll = FadeOnScroll;
