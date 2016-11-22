@@ -11,12 +11,12 @@ var matches = function(el, selector) {
 };
 
 // requestAnimationFrame
-var raf =  window.requestAnimationFrame       ||
-           window.webkitRequestAnimationFrame ||
-           window.mozRequestAnimationFrame    ||
-           window.msRequestAnimationFrame     ||
-           window.oRequestAnimationFrame      ||
-           function(callback){ window.setTimeout(callback, 1000/60) };
+var reqAF = window.requestAnimationFrame       ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame    ||
+            window.msRequestAnimationFrame     ||
+            window.oRequestAnimationFrame      ||
+            function(callback){ window.setTimeout(callback, 1000/60) };
 
 
 (function(document, window) {
@@ -24,6 +24,7 @@ var raf =  window.requestAnimationFrame       ||
   var FadeOnScroll = function(opts) {
     this.elements   = opts.elements || null;
     this.threshold  = Number.isInteger(opts.threshold) ? opts.threshold : 5;
+    this.tick       = false;
 
     this.elements.forEach(function(element) {
       _hide(element);
@@ -33,42 +34,47 @@ var raf =  window.requestAnimationFrame       ||
   FadeOnScroll.prototype.init = function() {
     var self = this;
 
-    if(!Array.isArray(this.elements))
+    if(!Array.isArray(self.elements))
       return;
 
     // First check
-    self.elements.forEach(function(element) {
-      if(_isOnScreen(element, self.threshold))
-        _show(element);
+    self.requestUpdate();
+
+    window.onscroll = function() {
+      self.requestUpdate();
+    };
+  };
+
+  FadeOnScroll.prototype.requestUpdate = function() {
+    var self = this;
+
+    if(!self.tick)
+      reqAF(_doFade.bind(self));
+
+    self.tick = true;
+  };
+
+  function _doFade() {
+    var self = this;
+
+    self.tick = false;
+
+    if(!self.elements.length)
+      return;
+
+    var updatedElements = [];
+
+    self.elements.forEach(function(element, index) {
+      if(!_isOnScreen(element, self.threshold)) {
+        updatedElements.push(element);
+        return;
+      }
+
+      _show(element);
     });
 
-    /*window.addEventListener('scroll', function() {
-      self.elements.forEach(function(element) {
-        if(_isOnScreen(element, self.threshold))
-          _show(element);
-      });
-    });*/
-
-    (function loop(elements) {
-      if(!elements.length)
-        return;
-
-      var updatedElements = [];
-
-      elements.forEach(function(element, index) {
-        if(!_isOnScreen(element, self.threshold)) {
-          updatedElements.push(element);
-          return;
-        }
-
-        _show(element);
-      });
-
-      console.log(1);
-
-      raf(loop.bind(this, updatedElements));
-    })(self.elements);
-  };
+    self.elements = updatedElements;
+  }
 
   function _isOnScreen(element, threshold) {
     var viewportHeight  = window.innerHeight;
