@@ -77,7 +77,9 @@ var reqAF = window.requestAnimationFrame       ||
 
     self.elements = updatedElements;
   }
-
+  
+  
+  // TODO: refactor this 
   function _isOnScreen(element, threshold) {
     var viewportHeight  = window.innerHeight;
     var elementPosition = element.getBoundingClientRect().top;
