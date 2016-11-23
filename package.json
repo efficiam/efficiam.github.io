@@ -12,10 +12,12 @@
     "autoprefixer": "^6.5.1",
     "cssnano": "^3.8.0",
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
     "gulp-postcss": "^6.2.0",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
     "gulp-webserver": "^0.9.1",
     "node-sass": "^3.10.1"
-  }
+  },
+  "dependencies": {}
 }

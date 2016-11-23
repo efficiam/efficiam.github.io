@@ -4,7 +4,8 @@ var gulp          = require('gulp'),
     autoprefixer  = require('autoprefixer'),
     postcss       = require('gulp-postcss'),
     webserver     = require('gulp-webserver'),
-    uglify        = require('gulp-uglify');
+    uglify        = require('gulp-uglify'),
+    concat        = require('gulp-concat');
 
 gulp.task('build-css', function() {
   return gulp.src('src/css/main.scss')
@@ -18,6 +19,7 @@ gulp.task('build-css', function() {
 
 gulp.task('build-js', function() {
   return gulp.src('src/js/*.js')
+    .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'));
 });
