@@ -91,25 +91,32 @@ var reqAF = window.requestAnimationFrame       ||
   }
 
   function _show(element) {
-    element.style.visibility  = 'visible';
-    element.style.opacity     = 1;
+    _setVendorStyle(element, 'Visibility', 'visible');
+    _setVendorStyle(element, 'Opacity', '1');
 
     if(matches(element, '.js-fadeFromLeft'))
-      element.style.transform = 'translateX(0)';
+      _setVendorStyle(element, 'Transform', 'translate3d(0, 0, 0)');
 
     if(matches(element, '.js-fadeFromRight'))
-      element.style.transform = 'translateX(0)';
+      _setVendorStyle(element, 'Transform', 'translate3d(0, 0, 0)');
   }
 
   function _hide(element) {
-    element.style.visibility  = 'hidden';
-    element.style.opacity     = 0;
+    _setVendorStyle(element, 'Visibility', 'hidden');
+    _setVendorStyle(element, 'Opacity', '0');
 
     if(matches(element, '.js-fadeFromLeft'))
-      element.style.transform = 'translateX(-50px)';
+      _setVendorStyle(element, 'Transform', 'translate3d(-50px, 0, 0)');
 
     if(matches(element, '.js-fadeFromRight'))
-      element.style.transform = 'translateX(50px)';
+      _setVendorStyle(element, 'Transform', 'translate3d(50px, 0, 0)');
+  }
+
+  function _setVendorStyle(element, property, value) {
+    element.style["webkit" + property] = value;
+    element.style["moz" + property] = value;
+    element.style["ms" + property] = value;
+    element.style["o" + property] = value;
   }
 
   window.FadeOnScroll = FadeOnScroll;
