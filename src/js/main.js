@@ -25,6 +25,7 @@ var reqAF = window.requestAnimationFrame       ||
     this.elements   = opts.elements || null;
     this.threshold  = Number.isInteger(opts.threshold) ? opts.threshold : 5;
     this.tick       = false;
+    this.requestUpdate = this.requestUpdate.bind(this);
 
     this.elements.forEach(function(element) {
       _hide(element);
@@ -39,17 +40,16 @@ var reqAF = window.requestAnimationFrame       ||
 
     // First check
     self.requestUpdate();
-
-    window.onscroll = function() {
-      self.requestUpdate();
-    };
+    
+    window.addEventListener('scroll', self.requestUpdate, false);
   };
 
   FadeOnScroll.prototype.requestUpdate = function() {
     var self = this;
 
-    if(!self.tick)
+    if(!self.tick) {
       reqAF(_doFade.bind(self));
+    }
 
     self.tick = true;
   };
@@ -59,8 +59,10 @@ var reqAF = window.requestAnimationFrame       ||
 
     self.tick = false;
 
-    if(!self.elements.length)
+    if (!self.elements.length) {
+      window.removeEventListener('scroll', self.requestUpdate, false);
       return;
+    }
 
     var updatedElements = [];
 
