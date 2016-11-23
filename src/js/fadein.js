@@ -18,18 +18,22 @@ var reqAF = window.requestAnimationFrame       ||
             window.oRequestAnimationFrame      ||
             function(callback){ window.setTimeout(callback, 1000/60) };
 
-
 (function(document, window) {
 
   var FadeOnScroll = function(opts) {
     this.elements   = opts.elements || null;
     this.threshold  = Number.isInteger(opts.threshold) ? opts.threshold : 5;
     this.tick       = false;
-    this.requestUpdate = this.requestUpdate.bind(this);
 
     this.elements.forEach(function(element) {
+      // The position of the element from top.
+      element.positionFromTop =
+        element.getBoundingClientRect().top + document.body.scrollTop;
+
       _hide(element);
     });
+
+    this.requestUpdate = this.requestUpdate.bind(this);
   };
 
   FadeOnScroll.prototype.init = function() {
@@ -78,11 +82,10 @@ var reqAF = window.requestAnimationFrame       ||
     self.elements = updatedElements;
   }
 
-
-  // TODO: refactor this
   function _isOnScreen(element, threshold) {
     var viewportHeight  = window.innerHeight;
-    var elementPosition = element.getBoundingClientRect().top;
+    var elementPosition =
+      element.positionFromTop - document.body.scrollTop;
 
     return -(elementPosition - viewportHeight) >= threshold;
   }
