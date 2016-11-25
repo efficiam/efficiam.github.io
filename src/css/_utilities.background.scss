@@ -6,9 +6,9 @@
 .u-bg-white  { background-color: $color-base-white; }
 
 .u-bg-poly { position: relative; }
-.u-bg-poly canvas { top: 0; left: 0; position: absolute; z-index: -1; }
+.u-bg-poly canvas { top: 0; left: 0; position: absolute; }
 
-.u-bg-grad-purple { background-image: linear-gradient(to right, $color-gradient-purple-1, $color-gradient-blue-1); }
+.u-bg-grad-purple { background-image: linear-gradient(138deg, $color-gradient-blue-1 0%, $color-gradient-purple-1 100%); }
 
 .u-bg-polyblack { background-image: url('../images/poly-black.svg'), linear-gradient(to right, $color-gradient-grey-2, $color-gradient-grey-1); }
 

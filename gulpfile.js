@@ -19,7 +19,6 @@ gulp.task('build-css', function() {
 
 gulp.task('build-js', function() {
   return gulp.src('src/js/*.js')
-    .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'));
 });

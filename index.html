@@ -17,11 +17,11 @@
 <body>
 
   <!-- Above the fold -->
-  <div class="u-width-full u-height-full u-width-a@md u-height-a@md u-bg-poly u-position-r u-overflow-h u-pt-xl@md u-pb-xl@md">
+  <div class="u-bg-grad-purple u-width-full u-height-full u-width-a@md u-height-a@md u-bg-poly u-position-r u-overflow-h u-pt-xl@md u-pb-xl@md">
     <div class="js-fadeOnScroll u-transition-opacity-1 u-opacity-0 u-height-full u-overflow-h">
       <!-- Poly here -->
 
-      <div class="u-display-t u-align-vc u-align-nvc@md u-ml-a u-mr-a u-txalign-center">
+      <div class="u-z-index-up u-position-r u-display-t u-align-vc u-align-nvc@md u-ml-a u-mr-a u-txalign-center">
         <img class="u-width-a u-height-20" src="./dist/images/logo.svg" alt="Efficiam">
         <div class="u-mt-nm">
           <span class="u-display-b u-txsize-xxl u-txuppercase u-txcolor-white u-txfamily-logo">Efficiam</span>
@@ -183,14 +183,13 @@
   </div>
 
   <!-- footer -->
-  <footer class="u-bg-poly u-position-r u-pt-xl u-pb-xl u-overflow-h u-pt-lg@md u-pb-lg@md">
+  <footer class="u-bg-grad-purple u-bg-poly u-position-r u-pt-xl u-pb-xl u-overflow-h u-pt-lg@md u-pb-lg@md">
     <!-- Poly here -->
 
     <div class="c-container u-ml-a u-mr-a">
     </div>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r82/three.min.js" charset="utf-8"></script>
-  <script src="dist/js/main.js"></script>
+  <script src="dist/js/fadein.js"></script>
   <script>
 
     var elements = [].slice.apply(document.querySelectorAll('.js-fadeOnScroll'));
@@ -201,5 +200,7 @@
     })).init();
 
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r82/three.min.js" charset="utf-8"></script>
+  <script src="dist/js/poly.js"></script>
 </body>
 </html>
