@@ -14,7 +14,7 @@ var gulp          = require('gulp'),
 gulp.task('browserSync', function() {
   browserSync({
     server: {
-      baseDir: 'dist'
+      baseDir: '.'
     }
   })
 });
@@ -52,7 +52,7 @@ gulp.task('useref', ['sass', 'images'], function () {
         autoprefixer({ browsers: ['last 2 versions'] }),
         cssnano()
       ])))
-      .pipe(gulp.dest('dist'))
+      .pipe(gulp.dest('.'))
       .pipe(browserSync.reload({
         stream: true
       }));
