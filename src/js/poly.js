@@ -7,7 +7,7 @@
   window.SystemJS.import('https://cdnjs.cloudflare.com/ajax/libs/three.js/r82/three.min.js')
     .then(function(THREE) {
       // Three js to refactor
-      addPolyTo(document.querySelector('.u-bg-poly'));
+      addPolyTo(document.querySelector('.js-showPoly'));
       addPolyTo(document.querySelector('footer'), {size: 'small', lightPosition: 'up'});
 
       function addPolyTo(el, opts) {

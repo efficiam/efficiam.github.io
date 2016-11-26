@@ -1,0 +1,21 @@
+.c-poly {
+
+  canvas {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    visibility: hidden;
+    opacity: 0;
+
+    animation: fadeIn 1s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

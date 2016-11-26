@@ -1,0 +1,9 @@
+/*
+ *  IE9 SVG scaling fix (utilities)
+ */
+
+ @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+   .u-iesvgfix {
+     width: 100%;
+   }
+ }
