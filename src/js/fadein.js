@@ -29,8 +29,6 @@ var reqAF = window.requestAnimationFrame       ||
       // The position of the element from top.
       element.positionFromTop =
         element.getBoundingClientRect().top + document.body.scrollTop;
-
-      _hide(element);
     });
 
     this.requestUpdate = this.requestUpdate.bind(this);
@@ -68,18 +66,12 @@ var reqAF = window.requestAnimationFrame       ||
       return;
     }
 
-    var updatedElements = [];
-
     self.elements.forEach(function(element, index) {
-      if(!_isOnScreen(element, self.threshold)) {
-        updatedElements.push(element);
-        return;
+      if(_isOnScreen(element, self.threshold)) {
+        _show(element);
+        delete self.elements[index];
       }
-
-      _show(element);
     });
-
-    self.elements = updatedElements;
   }
 
   function _isOnScreen(element, threshold) {
@@ -91,32 +83,11 @@ var reqAF = window.requestAnimationFrame       ||
   }
 
   function _show(element) {
-    _setVendorStyle(element, 'Visibility', 'visible');
-    _setVendorStyle(element, 'Opacity', '1');
-
-    if(matches(element, '.js-fadeFromLeft'))
-      _setVendorStyle(element, 'Transform', 'translate3d(0, 0, 0)');
-
-    if(matches(element, '.js-fadeFromRight'))
-      _setVendorStyle(element, 'Transform', 'translate3d(0, 0, 0)');
-  }
-
-  function _hide(element) {
-    _setVendorStyle(element, 'Visibility', 'hidden');
-    _setVendorStyle(element, 'Opacity', '0');
-
-    if(matches(element, '.js-fadeFromLeft'))
-      _setVendorStyle(element, 'Transform', 'translate3d(-50px, 0, 0)');
-
-    if(matches(element, '.js-fadeFromRight'))
-      _setVendorStyle(element, 'Transform', 'translate3d(50px, 0, 0)');
-  }
-
-  function _setVendorStyle(element, property, value) {
-    element.style["webkit" + property] = value;
-    element.style["moz" + property] = value;
-    element.style["ms" + property] = value;
-    element.style["o" + property] = value;
+    if (element.classList) {
+      element.classList.add('js-fadeIn');
+    } else {
+      element.className += ' ' + 'js-fadeIn';
+    }
   }
 
   window.FadeOnScroll = FadeOnScroll;
