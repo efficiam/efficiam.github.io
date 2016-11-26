@@ -3,40 +3,63 @@ var gulp          = require('gulp'),
     cssnano       = require('cssnano'),
     autoprefixer  = require('autoprefixer'),
     postcss       = require('gulp-postcss'),
-    webserver     = require('gulp-webserver'),
+    browserSync   = require('browser-sync'),
     uglify        = require('gulp-uglify'),
-    concat        = require('gulp-concat');
+    useref        = require('gulp-useref'),
+    gulpif        = require('gulp-if'),
+    cache         = require('gulp-cache'),
+    del           = require('del'),
+    imagemin = require('gulp-imagemin');
+    
+gulp.task('browserSync', function() {
+  browserSync({
+    server: {
+      baseDir: 'dist'
+    }
+  })
+});
 
-gulp.task('build-css', function() {
-  return gulp.src('src/css/main.scss')
+gulp.task('clean', function() {
+  return del.sync('dist').then(function(cb) {
+    return cache.clearAll(cb);
+  });
+});
+
+gulp.task('clean:dist', function() {
+  return del.sync(['dist/**/*']);
+});
+
+
+gulp.task('sass', function() {
+  return gulp.src('src/scss/main.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([
-      autoprefixer({ browsers: ['last 2 versions'] }),
-      cssnano()
-    ]))
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('src/css'));
 });
 
-gulp.task('build-js', function() {
-  return gulp.src('src/js/*.js')
-    .pipe(uglify())
-    .pipe(gulp.dest('dist/js'));
+gulp.task('images', function() {
+  return gulp.src('src/images/*.+(png|jpg|jpeg|gif|svg)')
+    .pipe(cache(imagemin({
+      interlaced: true,
+    })))
+    .pipe(gulp.dest('dist'))
 });
 
-gulp.task('start-webserver', function() {
-  gulp.src('./')
-    .pipe(webserver({
-      livereload:       true,
-      directoryListing: true,
-      open:             true,
-      host:             '0.0.0.0'
-    }));
+gulp.task('useref', ['sass', 'images'], function () {
+  return gulp.src('src/index.html')
+      .pipe(useref())
+      .pipe(gulpif('*.js', uglify()))
+      .pipe(gulpif('*.css', postcss([
+        autoprefixer({ browsers: ['last 2 versions'] }),
+        cssnano()
+      ])))
+      .pipe(gulp.dest('dist'))
+      .pipe(browserSync.reload({
+        stream: true
+      }));
 });
 
-gulp.task('watch-css', function() {
-  gulp.watch('src/css/*.scss', ['build-css']);
+gulp.task('default', ['clean:dist', 'browserSync', 'useref'], function() {
+  gulp.watch('./src/**/*', ['useref']);
 });
 
-gulp.task('watch-js', function() {
-  gulp.watch('src/js/*.js', ['build-js']);
-});
+gulp.task('build', ['clean:dist', 'useref']);

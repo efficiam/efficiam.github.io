@@ -10,7 +10,7 @@
 
 .u-bg-grad-purple { background-image: linear-gradient(138deg, $color-gradient-blue-1 0%, $color-gradient-purple-1 100%); }
 
-.u-bg-polyblack { background-image: url('../images/poly-black.svg'), linear-gradient(to right, $color-gradient-grey-2, $color-gradient-grey-1); }
+.u-bg-polyblack { background-image: url('poly-black.svg'), linear-gradient(to right, $color-gradient-grey-2, $color-gradient-grey-1); }
 
 .u-bg-cover       { background-size: cover; }
 .u-bg-fullv       { background-size: auto 100%; }

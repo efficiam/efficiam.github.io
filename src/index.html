@@ -11,7 +11,10 @@
   <link href="https://fonts.gstatic.com" rel='preconnect' crossorigin>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/three.js/r82/three.min.js" rel="preload" as="script">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Raleway:900" rel="stylesheet" >
-  <link href="./dist/css/main.css" rel="stylesheet">
+  
+  <!-- build:css main.css -->
+  <link href="css/main.css" rel="stylesheet">
+  <!-- endbuild -->
 </head>
 <body>
 
@@ -19,10 +22,7 @@
   <div class="u-bg-grad-purple u-width-full u-height-full u-width-a@md u-height-a@md u-bg-poly u-position-r u-overflow-h u-pt-xl@md u-pb-xl@md">
     <div class="u-height-full u-overflow-h">
       <div class="u-z-index-up u-position-r u-display-t u-align-vc u-align-nvc@md u-ml-a u-mr-a u-txalign-center">
-        <img class="u-animation-fade-in u-width-a u-height-20" src="./dist/images/logo.svg" alt="Efficiam">
-        <div class="u-mt-nm">
-          <span class="u-animation-fade-in u-display-b u-txsize-xxl u-txuppercase u-txcolor-white u-txfamily-logo">Efficiam</span>
-        </div>
+        <img class="u-animation-fade-in u-width-a u-height-20" src="logo.svg" alt="Efficiam">
       </div>
 
       <div class="u-z-index-up u-width-full u-position-a u-bottom u-pb-md u-pb-nm@md u-display-n@sm">
@@ -62,7 +62,7 @@
               <span class="u-txsize-md u-txcolor-white u-txweight-700">1</span>
             </div>
             <div class="u-display-tc u-display-b@md u-valign-middle u-mt-sm@md">
-              <img class="u-width-14 u-width-12@sm" src="./dist/images/icon-architecture.svg" alt="User Experience Architecture">
+              <img class="u-width-14 u-width-12@sm" src="icon-architecture.svg" alt="User Experience Architecture">
             </div>
             <div class="u-display-tc u-display-b@md u-valign-middle u-txalign-left u-pl-md u-pl-n@md u-mt-sm@md">
               <h2 class="u-txcolor-purple u-txsize-md u-txweight-700 u-txalign-center@md">UX Design</h2>
@@ -83,7 +83,7 @@
               <span class="u-txsize-md u-txcolor-white u-txweight-700">2</span>
             </div>
             <div class="u-display-tc u-display-b@md u-valign-middle u-mt-sm@md">
-              <img class="u-width-14 u-width-12@sm" src="./dist/images/icon-ui.svg" alt="User Interface Design">
+              <img class="u-width-14 u-width-12@sm" src="icon-ui.svg" alt="User Interface Design">
             </div>
             <div class="u-display-tc u-display-b@md u-valign-middle u-txalign-left u-pl-md u-pl-n@md u-mt-sm@md">
               <h2 class="u-txcolor-purple u-txsize-md u-txweight-700 u-txalign-center@md">UI Design</h2>
@@ -104,7 +104,7 @@
               <span class="u-txsize-md u-txcolor-white u-txweight-700">3</span>
             </div>
             <div class="u-display-tc u-display-b@md u-valign-middle u-mt-sm@md">
-              <img class="u-width-14 u-width-12@sm" src="./dist/images/icon-ux.svg" alt="User Experience Analysis">
+              <img class="u-width-14 u-width-12@sm" src="icon-ux.svg" alt="User Experience Analysis">
             </div>
             <div class="u-display-tc u-display-b@md u-valign-middle u-txalign-left u-pl-md u-pl-n@md u-mt-sm@md">
               <h2 class="u-txcolor-purple u-txsize-md u-txweight-700 u-txalign-center@md">UX Research</h2>
@@ -125,7 +125,7 @@
               <span class="u-txsize-md u-txcolor-white u-txweight-700">4</span>
             </div>
             <div class="u-display-tc u-display-b@md u-valign-middle u-mt-sm@md">
-              <img class="u-width-14 u-width-12@sm" src="./dist/images/icon-frontend.svg" alt="Front-end Development">
+              <img class="u-width-14 u-width-12@sm" src="icon-frontend.svg" alt="Front-end Development">
             </div>
             <div class="u-display-tc u-display-b@md u-valign-middle u-txalign-left u-pl-md u-pl-n@md u-mt-sm@md">
               <h2 class="u-txcolor-purple u-txsize-md u-txweight-700 u-txalign-center@md">Front-end Development</h2>
@@ -146,7 +146,7 @@
               <span class="u-txsize-md u-txcolor-white u-txweight-700">5</span>
             </div>
             <div class="u-display-tc u-display-b@md u-valign-middle u-mt-sm@md">
-              <img class="u-width-14 u-width-12@sm" src="./dist/images/icon-maintenance.svg" alt="Maintenance">
+              <img class="u-width-14 u-width-12@sm" src="icon-maintenance.svg" alt="Maintenance">
             </div>
             <div class="u-display-tc u-display-b@md u-valign-middle u-txalign-left u-pl-md u-pl-n@md u-mt-sm@md">
               <h2 class="u-txcolor-purple u-txsize-md u-txweight-700 u-txalign-center@md">Maintenance</h2>
@@ -184,19 +184,17 @@
     <div class="c-container u-ml-a u-mr-a">
     </div>
   </footer>
-  <script src="dist/js/fadein.js"></script>
-  <script>
-
-    var elements = [].slice.apply(document.querySelectorAll('.js-fadeOnScroll'));
-
-    (new FadeOnScroll({
-      elements:   elements,
-      threshold:  50
-    })).init();
-
-  </script>
-  <script src="dist/js/bowser.js" charset="utf-8"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r82/three.min.js" charset="utf-8"></script>
-  <script src="dist/js/poly.js"></script>
+  
+  <!-- build:js fade.js  -->
+  <script src="js/fadein.js"></script>
+  <script src="js/initfade.js"></script>
+  <!-- endbuild -->
+  
+  <!-- build:js poly.js async -->
+  <script src="js/bowser.js" charset="utf-8"></script>
+  <script src="js/es6-promise.auto.js" charset="utf-8"></script>
+  <script src="js/system.src.js" charset="utf-8"></script>
+  <script src="js/poly.js"></script>
+  <!-- endbuild -->
 </body>
 </html>
