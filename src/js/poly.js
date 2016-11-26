@@ -1,4 +1,9 @@
 (function(document, window) {
+  if ((bowser.msie && bowser.version < 11) ||
+      (bowser.android && bowser.webkit)) {
+        return;
+      }
+  
 
   // Three js to refactor
   addPolyTo(document.querySelector('.u-bg-poly'));
