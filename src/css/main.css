@@ -487,6 +487,19 @@ ul {
   max-width: 76.5625em;
   padding: 0 1.5625em; }
 
+.c-poly canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards; }
+
+@keyframes fadeIn {
+  to {
+    visibility: visible;
+    opacity: 1; } }
+
 /*
  * Scollpls (components)
  */
@@ -631,11 +644,14 @@ ul {
 .u-width-a {
   width: auto; }
 
+.u-height-a {
+  height: auto; }
+
 .u-width-14 {
   width: 14em; }
 
-.u-height-20 {
-  height: 10em; }
+.u-height-15 {
+  height: 15em; }
 
 .u-maxwidth-x17 {
   max-width: 53.125em; }
@@ -734,9 +750,6 @@ ul {
 
 .u-txuppercase {
   text-transform: uppercase; }
-
-.u-txfamily-logo {
-  font-family: 'Raleway', sans-serif; }
 
 .u-txfamily-text {
   font-family: 'Lato', sans-serif; }
@@ -970,3 +983,10 @@ ul {
     opacity: 0; }
   100% {
     opacity: 1; } }
+
+/*
+ *  IE9 SVG scaling fix (utilities)
+ */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .u-iesvgfix {
+    width: 100%; } }
