@@ -35,43 +35,34 @@ var reqAF = window.requestAnimationFrame       ||
   };
 
   FadeOnScroll.prototype.init = function() {
-    var self = this;
-
-    if(!Array.isArray(self.elements))
-      return;
+    if (!Array.isArray(this.elements)) return;
 
     // First check
-    self.requestUpdate();
+    this.requestUpdate();
 
-    window.addEventListener('scroll', self.requestUpdate, false);
+    window.addEventListener('scroll', this.requestUpdate, false);
   };
 
   FadeOnScroll.prototype.requestUpdate = function() {
-    var self = this;
-
-    if(!self.tick) {
-      reqAF(_doFade.bind(self));
-    }
-
-    self.tick = true;
+    if (this.tick) return;
+    this.tick = true;
+    reqAF(_doFade.bind(this));
   };
 
   function _doFade() {
-    var self = this;
-
-    self.tick = false;
-
-    if (!self.elements.length) {
-      window.removeEventListener('scroll', self.requestUpdate, false);
+    if (!this.elements.length) {
+      window.removeEventListener('scroll', this.requestUpdate, false);
       return;
     }
 
-    self.elements.forEach(function(element, index) {
-      if(_isOnScreen(element, self.threshold)) {
+    this.elements.forEach(function(element, index) {
+      if(_isOnScreen(element, this.threshold)) {
         _show(element);
-        delete self.elements[index];
+        delete this.elements[index];
       }
-    });
+    }, this);
+    
+    this.tick = false;
   }
 
   function _isOnScreen(element, threshold) {
@@ -79,9 +70,9 @@ var reqAF = window.requestAnimationFrame       ||
     var scrollTop = window.pageYOffset ||
                     document.documentElement.scrollTop ||
                     document.body.scrollTop || 0;
-    var elementPosition = element.positionFromTop - scrollTop;
+    var relElementPosition = scrollTop - element.positionFromTop;
 
-    return -(elementPosition - viewportHeight) >= threshold;
+    return (viewportHeight + relElementPosition) >= threshold;
   }
 
   function _show(element) {
