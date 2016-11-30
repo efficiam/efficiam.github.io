@@ -5,6 +5,7 @@
 .c-fadein-box {
   position: relative;
   opacity: 0;
+  will-change: opacity, transform;
 
   &--from-left   { transform: translate3d(-50px, 0, 0); }
   &--from-right  { transform: translate3d(50px, 0, 0); }

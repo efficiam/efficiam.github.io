@@ -582,7 +582,8 @@ ul {
  */
 .c-fadein-box {
   position: relative;
-  opacity: 0; }
+  opacity: 0;
+  will-change: opacity, transform; }
   .c-fadein-box--from-left {
     transform: translate3d(-50px, 0, 0); }
   .c-fadein-box--from-right {
