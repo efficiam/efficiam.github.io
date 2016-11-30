@@ -76,8 +76,10 @@ var reqAF = window.requestAnimationFrame       ||
 
   function _isOnScreen(element, threshold) {
     var viewportHeight  = window.innerHeight;
-    var elementPosition =
-      element.positionFromTop - document.body.scrollTop;
+    var scrollTop = window.pageYOffset ||
+                    document.documentElement.scrollTop ||
+                    document.body.scrollTop || 0;
+    var elementPosition = element.positionFromTop - scrollTop;
 
     return -(elementPosition - viewportHeight) >= threshold;
   }
