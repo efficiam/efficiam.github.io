@@ -578,21 +578,6 @@ ul {
   clear: both; }
 
 /*
- * fadein-box (components)
- */
-.c-fadein-box {
-  position: relative;
-  opacity: 0;
-  will-change: opacity, transform; }
-  .c-fadein-box--from-left {
-    transform: translate3d(-50px, 0, 0); }
-  .c-fadein-box--from-right {
-    transform: translate3d(50px, 0, 0); }
-  .c-fadein-box--visible {
-    opacity: 1;
-    transform: translate3d(0, 0, 0); }
-
-/*
  * Utilities
  */
 /*
@@ -679,8 +664,8 @@ ul {
     width: auto; }
   .u-height-a\@md {
     height: auto; }
-  .u-maxwidth-x10\@md {
-    max-width: 31.25em; } }
+  .u-maxwidth-x11\@md {
+    max-width: 34.375em; } }
 
 @media screen and (max-width: 31.25em) {
   .u-width-12\@sm {
@@ -755,7 +740,7 @@ ul {
   font-size: 1.5em; }
 
 .u-txsize-nm {
-  font-size: 1.125em; }
+  font-size: 1.3125em; }
 
 .u-txsize-xl {
   font-size: 3em; }
