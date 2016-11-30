@@ -7,22 +7,3 @@
   &--shadowed  { box-shadow: 0 0 2em rgba($color-base-black, .2); }
   &--rounded   { border-radius: $radius-size; }
 }
-
-
-.js-fadeFromLeft, .js-fadeFromRight {
-  position: relative;
-  opacity: 0;
-}
-
-.js-fadeFromLeft {
-  transform: translate3d(-50px, 0, 0);
-}
-
-.js-fadeFromRight {
-  transform: translate3d(50px, 0, 0);
-}
-
-.js-fadeIn {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-}

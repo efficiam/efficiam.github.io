@@ -86,9 +86,9 @@ var reqAF = window.requestAnimationFrame       ||
 
   function _show(element) {
     if (element.classList) {
-      element.classList.add('js-fadeIn');
+      element.classList.add('c-fadein-box--visible');
     } else {
-      element.className += ' ' + 'js-fadeIn';
+      element.className += ' ' + 'c-fadein-box--visible';
     }
   }
 

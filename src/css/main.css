@@ -550,20 +550,6 @@ ul {
 .c-island--rounded {
   border-radius: 0.3em; }
 
-.js-fadeFromLeft, .js-fadeFromRight {
-  position: relative;
-  opacity: 0; }
-
-.js-fadeFromLeft {
-  transform: translate3d(-50px, 0, 0); }
-
-.js-fadeFromRight {
-  transform: translate3d(50px, 0, 0); }
-
-.js-fadeIn {
-  opacity: 1;
-  transform: translate3d(0, 0, 0); }
-
 /*
  * Label-number (components)
  */
@@ -590,6 +576,20 @@ ul {
  */
 .c-clear {
   clear: both; }
+
+/*
+ * fadein-box (components)
+ */
+.c-fadein-box {
+  position: relative;
+  opacity: 0; }
+  .c-fadein-box--from-left {
+    transform: translate3d(-50px, 0, 0); }
+  .c-fadein-box--from-right {
+    transform: translate3d(50px, 0, 0); }
+  .c-fadein-box--visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
 
 /*
  * Utilities
@@ -782,9 +782,6 @@ ul {
 
 .u-txline-14 {
   line-height: 1.4; }
-
-.u-txweight-normal {
-  font-weight: normal; }
 
 .u-txweight-300 {
   font-weight: 300; }

@@ -1,0 +1,16 @@
+/*
+ * fadein-box (components)
+ */
+
+.c-fadein-box {
+  position: relative;
+  opacity: 0;
+
+  &--from-left   { transform: translate3d(-50px, 0, 0); }
+  &--from-right  { transform: translate3d(50px, 0, 0); }
+
+  &--visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
