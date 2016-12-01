@@ -533,7 +533,8 @@ ul {
  * Button abstraction
  */
 .c-btn {
-  border-radius: 0.3em; }
+  border-radius: 0.3em;
+  cursor: pointer; }
   .c-btn--full {
     transition: all ease .2s;
     backface-visibility: hidden;

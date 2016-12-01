@@ -5,6 +5,7 @@
 
 .c-btn {
   border-radius: $radius-size;
+  cursor: pointer;
 
   &--full {
     transition: all ease .2s;
