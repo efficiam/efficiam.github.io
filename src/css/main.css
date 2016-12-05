@@ -601,6 +601,9 @@ ul {
 .u-bg-grad-purple {
   background-image: linear-gradient(138deg, #3C73DB 0%, #BD19F5 100%); }
 
+.u-bg-grad-grey {
+  background-image: linear-gradient(to right, #E6E6E6, #FAFAFA); }
+
 .u-bg-polyblack {
   background-image: url("poly-black.svg"), linear-gradient(to right, #E6E6E6, #FAFAFA); }
 
