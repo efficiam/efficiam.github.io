@@ -2,4 +2,6 @@
  * Opacity (utilities)
  */
 
-.u-opacity-0 { opacity: 0; }
+.u-opacity-0    { opacity: 0; }
+.u-opacity-half { opacity: 0.5; }
+.u-opacity-1--on-hover:hover { opacity: 1; }
