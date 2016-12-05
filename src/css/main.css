@@ -487,19 +487,6 @@ ul {
   max-width: 76.5625em;
   padding: 0 1.5625em; }
 
-.c-poly canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  visibility: hidden;
-  opacity: 0;
-  animation: fadeIn 1s ease forwards; }
-
-@keyframes fadeIn {
-  to {
-    visibility: visible;
-    opacity: 1; } }
-
 /*
  * Scollpls (components)
  */
@@ -960,39 +947,6 @@ ul {
 
 .u-transition-all-05 {
   transition: opacity ease-in-out .5s, transform ease-in-out .5s; }
-
-/*
- * Animation (utilities)
- */
-.u-animation-fade-in {
-  -webkit-animation: fade-in 1s;
-  -moz-animation: fade-in 1s;
-  -o-animation: fade-in 1s;
-  animation: fade-in 1s; }
-
-@-webkit-keyframes fade-in {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@-moz-keyframes fade-in {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@-o-keyframes fade-in {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@keyframes fade-in {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
 
 /*
  *  IE9 SVG scaling fix (utilities)
