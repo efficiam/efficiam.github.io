@@ -9,8 +9,9 @@ var gulp          = require('gulp'),
     gulpif        = require('gulp-if'),
     cache         = require('gulp-cache'),
     del           = require('del'),
-    imagemin = require('gulp-imagemin');
-    
+    imagemin      = require('gulp-imagemin'),
+    htmlmin       = require('gulp-htmlmin');
+
 gulp.task('browserSync', function() {
   browserSync({
     server: {
@@ -52,6 +53,9 @@ gulp.task('useref', ['sass', 'images'], function () {
         autoprefixer({ browsers: ['last 2 versions'] }),
         cssnano()
       ])))
+      .pipe(gulpif('*.html', htmlmin({
+        collapseWhitespace: true
+      })))
       .pipe(gulp.dest('.'))
       .pipe(browserSync.reload({
         stream: true
