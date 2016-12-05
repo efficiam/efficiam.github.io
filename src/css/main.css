@@ -440,7 +440,7 @@ html {
   height: 100%; }
 
 body {
-  font-family: 'Lato', sans-serif; }
+  font-family: 'Source Sans Pro', sans-serif; }
 
 /*
  * Anchor (base)
@@ -733,6 +733,9 @@ ul {
 .u-txsize-nm {
   font-size: 1.3125em; }
 
+.u-txsize-lg {
+  font-size: 2em; }
+
 .u-txsize-xl {
   font-size: 3em; }
 
@@ -766,8 +769,8 @@ ul {
 .u-txweight-400 {
   font-weight: 400; }
 
-.u-txweight-700 {
-  font-weight: 700; }
+.u-txweight-500 {
+  font-weight: 500; }
 
 .u-txspace-008 {
   letter-spacing: 0.08em; }
