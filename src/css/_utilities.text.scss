@@ -2,6 +2,7 @@
 .u-txblack  { color: $color-black; }
 .u-txwhite  { color: $color-white; }
 
+.u-txsize1 { font-size: $font-1; }
 .u-txsize2 { font-size: $font-2; }
 .u-txsize3 { font-size: $font-3; }
 .u-txsize4 { font-size: $font-4; }
@@ -23,5 +24,6 @@
 .u-txbold    { font-weight: 600; }
 
 @media screen and (max-width: $breakpoint-2) {
+  .u-txsize5\@bp2 { font-size: $font-5; }
   .u-txcenter\@bp2 { text-align: center; }
 }
