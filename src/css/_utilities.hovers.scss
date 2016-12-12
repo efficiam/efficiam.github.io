@@ -1,0 +1,9 @@
+.u-enlarge {
+  transition: transform .2s ease;
+
+  &:hover,
+  &:focus,
+  &:active {
+    transform: scale3d(1.22, 1.22, 1.22);
+  }
+}

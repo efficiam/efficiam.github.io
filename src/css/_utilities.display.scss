@@ -1,0 +1,11 @@
+.u-table     { display: table; }
+.u-tablecell { display: table-cell; }
+
+@media screen and (max-width: $breakpoint-1) {
+  .u-nodisplay\@bp1 { display: none; }
+}
+
+@media screen and (max-width: $breakpoint-2) {
+  .u-tablehader\@bp2 { display: table-header-group; }
+  .u-tablefooter\@bp2 { display: table-footer-group; }
+}

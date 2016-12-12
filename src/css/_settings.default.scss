@@ -1,0 +1,43 @@
+// Colors
+$color-white:        #FFFFFF;
+$color-purple:       #7E5CE8;
+$color-black:        #585858;
+$color-fluoblue:     #3C73DB;
+$color-fluopurple:   #BD19F5;
+$color-lightgrey:    #F0F0F0;
+
+// Breakpoints
+$breakpoint-1: 68.75em;   // 1100
+$breakpoint-2: 53.125em;  // 850
+
+// Vertical rhythm
+$vertical-rhythm: 3.125em; // 50
+
+// Spaces
+$space-default: $vertical-rhythm;
+
+$space-1: $space-default / 4;
+$space-2: $space-default / 2;
+$space-3: $space-default;
+$space-4: $space-default * 2;
+$space-5: $space-default * 4;
+$space-6: $space-default * 6;
+
+// Sizes
+$size-default: $vertical-rhythm;
+
+$size-1: 5em;
+$size-2: 15em;
+$size-3: 20em;
+$size-4: 25em;
+$size-5: 45em;
+
+$size-layout:  75em;     //1200
+
+// Fonts
+$font-2: 1em;       // 16
+$font-3: 1.3125em;  // 21
+$font-4: 1.5em;     // 24
+$font-5: 2.25em;    // 36
+$font-6: 3em;       // 48
+$font-7: 4.5em;     // 72

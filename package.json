@@ -1,32 +1,32 @@
 {
   "name": "efficiam",
   "version": "1.0.0",
+  "description": "Main website.",
   "main": "index.html",
+  "scripts": {
+    "build:css@windows": "node-sass src/css/main.scss dist/css/main.min.css --output-style compressed",
+
+    "build:css": "node-sass src/css/main.scss | postcss -u autoprefixer -u cssnano > dist/css/main.min.css",
+    "build:html": "html-minifier --collapse-whitespace ./src/index.html -o index.html",
+    "build": "npm run build:html && npm run build:css",
+    "build:watch": "watch 'npm run build' ./src/"
+  },
   "repository": {
-    "url": "git@github.com:ricogallo/efficiam.git",
-    "type": "git"
+    "type": "git",
+    "url": "git+https://github.com/efficiam/efficiam.github.io.git"
   },
-  "author": "diegopq <diego.pq.k@gmail.com>",
-  "license": "MIT",
+  "author": "Diego Pasquali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/efficiam/efficiam.github.io/issues"
+  },
+  "homepage": "https://efficiam.com",
   "devDependencies": {
-    "autoprefixer": "^6.5.1",
-    "cssnano": "^3.8.0",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-postcss": "^6.2.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^2.0.0",
-    "gulp-webserver": "^0.9.1",
-    "node-sass": "^3.10.1"
-  },
-  "dependencies": {
-    "browser-sync": "^2.18.2",
-    "cache": "^1.1.2",
-    "del": "^2.2.2",
-    "gulp-cache": "^0.4.5",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^3.1.1",
-    "gulp-useref": "^3.1.2"
+    "autoprefixer": "^6.5.3",
+    "cssnano": "^3.8.1",
+    "html-minifier": "^3.2.3",
+    "node-sass": "^3.13.0",
+    "postcss-cli": "^2.6.0",
+    "watch": "^1.0.1"
   }
 }
