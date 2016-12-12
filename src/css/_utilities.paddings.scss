@@ -13,3 +13,11 @@
 
 .u-pt5 { padding-top: $space-5; }
 .u-pb5 { padding-bottom: $space-5; }
+
+@media screen and (max-width: $breakpoint-2) {
+  .u-pt4\@bp2 { padding-top: $space-4; }
+  .u-pb4\@bp2 { padding-bottom: $space-4; }
+
+  .u-pln\@bp2 { padding-left: 0; }
+  .u-prn\@bp2 { padding-right: 0; }
+}

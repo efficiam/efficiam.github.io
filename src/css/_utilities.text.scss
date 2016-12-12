@@ -21,3 +21,7 @@
 .u-txlight   { font-weight: 300; }
 .u-txnormal  { font-weight: 400; }
 .u-txbold    { font-weight: 600; }
+
+@media screen and (max-width: $breakpoint-2) {
+  .u-txcenter\@bp2 { text-align: center; }
+}
