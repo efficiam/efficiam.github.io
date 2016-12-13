@@ -1,5 +1,5 @@
 .u-h2 { height: $size-2; }
-.u-w4 { width: $size-4; }
+.u-w3 { width: $size-3; }
 
 .u-maxwlayout { max-width: $size-layout; }
 
@@ -7,10 +7,6 @@
 .u-h100p { height: 100%; }
 .u-w50p  { width: 50%; }
 .u-w100p { width: 100%; }
-
-@media screen and (max-width: $breakpoint-1) {
-  .u-w3\@bp1 { width: $size-3; }
-}
 
 @media screen and (max-width: $breakpoint-2) {
   .u-w1\@bp2 { width: $size-1; }
