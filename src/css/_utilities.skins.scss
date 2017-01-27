@@ -4,9 +4,8 @@
 
 // Very high specificity :(
 .u-blueToPurpleCity {
-  background-image: linear-gradient(to bottom right, rgba($color-fluoblue, .9), rgba($color-fluopurple, .9)), url('../images/cover.jpg');
-  background-size: cover;
-  background-position: center;
+  background-image: linear-gradient(to bottom right, rgba($color-fluoblue, .9), rgba($color-fluopurple, .9)),
+                    url('../images/cover.jpg');
  }
 
 .u-purple { background-color: $color-purple; }
