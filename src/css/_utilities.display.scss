@@ -1,5 +1,6 @@
-.u-table     { display: table; }
-.u-tablecell { display: table-cell; }
+.u-inlineblock  { display: inline-block; }
+.u-table        { display: table; }
+.u-tablecell    { display: table-cell; }
 
 @media screen and (max-width: $breakpoint-1) {
   .u-nodisplay\@bp1 { display: none; }
