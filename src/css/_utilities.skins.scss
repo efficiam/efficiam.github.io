@@ -2,4 +2,11 @@
 .u-greyToWhite  { background-image: linear-gradient(to bottom right, $color-lightgrey, $color-white); }
 .u-blueToPurple { background-image: linear-gradient(to bottom right, $color-fluoblue, $color-fluopurple); }
 
+// Very high specificity :(
+.u-blueToPurpleCity {
+  background-image: linear-gradient(to bottom right, rgba($color-fluoblue, .9), rgba($color-fluopurple, .9)), url('../images/cover.jpg');
+  background-size: cover;
+  background-position: bottom;
+ }
+
 .u-purple { background-color: $color-purple; }
