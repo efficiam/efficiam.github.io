@@ -8,7 +8,7 @@
 
     "build:css": "node-sass src/css/main.scss | postcss -u autoprefixer -u cssnano > dist/css/main.min.css",
     "build:html": "html-minifier --collapse-whitespace --conservative-collapse ./src/index.html -o index.html",
-    "build": "npm run build:html && npm run build:css",
+    "build": "npm run build:css && npm run build:html",
     "build:watch": "watch 'npm run build' ./src/"
   },
   "repository": {
