@@ -8,5 +8,6 @@
 .u-mt3 { margin-top: $space-3; }
 
 @media screen and (max-width: $breakpoint-2) {
+  .u-mt2\@bp2 { margin-top: $space-2; }
   .u-mt3\@bp2 { margin-top: $space-3; }
 }
